@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    min-height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(0, 43, 42, 0.7) 0%,
+        rgba(0, 43, 42, 0.5) 50%,
+        rgba(0, 43, 42, 0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   Community Section
+   ========================================================================== */
+.community {
+    height: 100vh;
+    min-height: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.community::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(0, 43, 42, 0.7) 0%,
+        rgba(0, 43, 42, 0.5) 50%,
+        rgba(0, 43, 42, 0.3) 100%);
+    z-index: 1;
+}
+
+.community .section-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 600px;
+}
+
+.community h2 {
+    font-size: 64px;
+    margin-bottom: 24px;
+    color: var(--text-light);
+}
+
+.community p {
+    font-size: 24px;
+    margin-bottom: 32px;
+    color: var(--text-light);
+}
+
+.community .btn {
+    font-size: 18px;
+    padding: 16px 32px;
+    background-color: rgba(0, 43, 42, 0.4);
+    border: 2px solid var(--text-light);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.community .btn:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Estilos Comuns das Seções
+   ========================================================================== */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.section .section-content {
+    text-align: center;
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.section h2 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.section p {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+
+.section .btn {
+    font-size: 18px;
+    padding: 16px 32px;
+    background-color: rgba(0, 43, 42, 0.4);
+    border: 2px solid var(--text-light);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.section .btn:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Seção de Contato
+   ========================================================================== */
+.section-contact {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.section-contact .section-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.section-contact h2 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.section-contact p {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+
+.section-contact .btn {
+    font-size: 18px;
+    padding: 16px 32px;
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+    .section h2,
+    .section-contact h2 {
+        font-size: 25px;
+    }
+
+    .section p,
+    .section-contact p {
+        font-size: 12.5px;
+    }
+
+    .section .btn,
+    .section-contact .btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .hero-description {
+        font-size: 12.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1,
+    .community h2 {
+        font-size: 36px;
+    }
+
+    .hero-description,
+    .community p {
+        font-size: 18px;
+    }
+} 

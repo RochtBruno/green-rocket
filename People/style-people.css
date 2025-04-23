@@ -1,0 +1,484 @@
+/* ==========================================================================
+   Common Styles
+   ========================================================================== */
+:root {
+    --primary-color: #002B2A;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --transition: all 0.3s ease;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(0, 43, 42, 0.7) 0%,
+        rgba(0, 43, 42, 0.5) 50%,
+        rgba(0, 43, 42, 0.3) 100%);
+    z-index: 1;
+}
+
+.section-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.section-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.section h2 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.section p {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+        rgba(0, 43, 42, 0.7) 0%,
+        rgba(0, 43, 42, 0.5) 50%,
+        rgba(0, 43, 42, 0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.hero-content p {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   Leadership Section
+   ========================================================================== */
+.leadership {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.leadership .section-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.leadership h2 {
+    font-size: 50px;
+    color: var(--text-light);
+}
+
+.leadership p {
+    font-size: 22px;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 48px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.content-box {
+    width: 390px;
+    height: 450px;
+    border-radius: 16px;
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+.content-box p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.content-box.pri {
+    background-image: url('../Imagens/card-1-people.png');
+}
+
+.content-box.pri p {
+    color: var(--text-light);
+}
+
+.content-box.sec {
+    background-image: url('../Imagens/card-2-people.png');
+}
+
+.content-box.sec p {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Driven Section
+   ========================================================================== */
+.driven {
+    background-color: var(--text-light);
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.driven::before {
+    display: none;
+}
+
+.driven .section-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 500px;
+    color: var(--text-dark);
+}
+
+.driven h2 {
+    color: var(--text-dark);
+}
+
+.driven p {
+    color: var(--text-dark);
+}
+
+.content-box.ter {
+    width: 487px;
+    height: 566px;
+    background-image: url('../Imagens/card-3-people.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 0;
+}
+
+.content-box.ter p {
+    font-size: 18px;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Culture Section
+   ========================================================================== */
+
+.culture__content{
+    text-align: center;
+    margin: 120px auto;
+    padding: 0 4%;
+}
+
+.culture__content h2{
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.culture__content p {
+    font-size: 18px;
+}
+
+/* ==========================================================================
+   leadership Section
+   ========================================================================== */
+.leadership{
+    text-align: center;
+}
+
+.leadership__content{
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1280px;
+}
+
+.leadership__content h2{
+    margin-bottom: 30px;
+}
+
+.content-box.pri{
+    background-image: url('../images/leadership-1.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.content-box.sec{
+    background-image: url('../images/leadership-2.png');
+    background-size: cover;
+    background-position: center;
+}
+.content-box.ter{
+    background-image: url('../images/driven-1.png');
+    background-position: center;
+    background-size: cover;
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .driven .section-content {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .text-content {
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .content-box.ter {
+        width: 100%;
+        max-width: 487px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .section h2 {
+        font-size: 32px;
+    }
+
+    .section p {
+        font-size: 18px;
+    }
+
+    .leadership, .driven {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .content-box {
+        width: 100%;
+        max-width: 390px;
+        height: 350px;
+    }
+
+    .content-box.ter {
+        height: 450px;
+    }
+
+    .content-box p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .leadership, .driven {
+        padding: 40px 16px;
+    }
+
+    .section h2 {
+        font-size: 25px;
+    }
+
+    .section p {
+        font-size: 17px;
+    }
+
+    .content-box {
+        height: 450px;
+    }
+
+    .content-box.ter {
+        height: 400px;
+    }
+
+    .content-box p {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+.contact {
+    background-color: var(--primary-color);
+}
+
+.contact .btn {
+    font-size: 18px;
+    padding: 16px 32px;
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 180px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact .btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+    .section h2,
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .section p,
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .content-box {
+        padding: 20px;
+        height: 370px;
+        width: 363px;
+    }
+}
+
+/* ==========================================================================
+   Content Box Styles
+   ========================================================================== */
+.content-box {
+    width: 390px;
+    height: 450px;
+    border-radius: 16px;
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.content-box p {
+    font-size: 24px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Specific styles for leadership section */
+
+.pri p {
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+.sec p {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.text-content{
+    color: var(--text-dark);
+}
+
+section.driven .content-box.ter p {
+    font-size: 18px;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+@media (max-width: 1200px) {
+    section.driven .content-box.ter {
+        width: 100%;
+        max-width: 487px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    section.driven .content-box.ter {
+        height: 450px;
+    }
+
+    section.driven .content-box.ter p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    section.driven .content-box.ter {
+        height: 400px;
+    }
+
+    section.driven .content-box.ter p {
+        font-size: 14px;
+    }
+}

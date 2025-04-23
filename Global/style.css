@@ -1,0 +1,274 @@
+/* Reset e variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #002B2A;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: "Fivo Sans", Arial, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header.scrolled {
+    background-color: rgba(0, 43, 42, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Seções */
+.section, .hero {
+    min-height: 80vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.section::before, .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 43, 42, 0.819) 0%,
+        rgba(0, 43, 42, 0.7) 50%,
+        rgba(0, 43, 42, 0) 100%
+    );
+    z-index: 0;
+}
+
+.section-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.section-content {
+    position: relative;
+    z-index: 1;
+    color: var(--text-light);
+    /* text-align: center; */
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Hero Section */
+.hero-content {
+    text-align: center;
+    color: var(--primary-color);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.hero-content h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content p {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* Content Box */
+.content-box {
+    background-color: rgba(0, 43, 42, 0.8);
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+}
+
+.content-box p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.content-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 180px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.4rem;
+    }
+    
+    .section-content {
+        padding: 4rem;
+    }
+    
+    .btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    /* .section-content {
+        padding: 6rem;
+    } */
+    
+    .section {
+        padding: 4rem 2rem;
+    }
+}
+
+/* Section-specific styles */
+.process, .community, .product, .foundation, .leadership, .driven, .management, .governance, .culture {
+    background-color: transparent;
+}
+
+.section-contact {
+    min-height: 50vh;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.section-contact .btn {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+/* Estilos do Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+.carousel-item {
+    flex: 0 0 105px;
+    height: 144px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+  
