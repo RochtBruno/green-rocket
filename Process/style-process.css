@@ -151,8 +151,10 @@ body {
 }
 
 /* Hero Section */
+
+
 .hero {
-    background-image: url(hp-image.png);
+    background-image: url('../images/process1.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -163,6 +165,14 @@ body {
     justify-content: center;
     padding: 80px 20px;
     width: 100%;
+    z-index: 1;
+}
+.overlay{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -398,10 +408,16 @@ body {
 
 .section.carousel.step h2 {
     margin-bottom: 30px;
+    font-size: 52px;
+    font-weight: bold;
 }
 
 .section.carousel.step p {
     margin-bottom: 30px;
+}
+
+.section__carousel-description{
+    font-size: 25px;
 }
 
 /* Carousel Styles */
@@ -431,7 +447,7 @@ body {
     flex: 0 0 calc(33.333% - 14px);
     width: calc(33.333% - 14px);
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #ffffff;
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -441,31 +457,29 @@ body {
 
 .step-box:hover {
     transform: scale(1.02);
-    background-color: rgba(255, 255, 255, 0.08);
+
 }
 
 .step-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: #002B2A;
 }
 
 .step-number {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-light);
     opacity: 0.8;
 }
 
 .step-box h3 {
-    color: var(--text-light);
     font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
 }
 
 .step-box p {
-    color: var(--text-light);
     opacity: 0.8;
     line-height: 1.6;
     margin: 0;
@@ -516,22 +530,41 @@ body {
 }
 
 .compliance {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 3%;
 }
+
 
 .compliance .section-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #002B2A;
+    flex: 1;
+    padding: 20px;
+    padding-left: 150px;
+    text-align: left;
 }
-
 .compliance h2 {
     margin-bottom: 30px;
+    font-size: 52px;
 }
 
 .compliance p {
     margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.compliance__image {
+    flex: 1;
+    width: 100%;
+    height: 950px;
+    background-image: url('../images/image\ \(10\).png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+
 }
 
 .product {
@@ -565,7 +598,7 @@ body {
         left: 50%;
         transform: translateX(-50%);
     }
-    
+
     .content-box.ter {
         height: 530px;
     }
@@ -575,15 +608,15 @@ body {
     .hero-content h1 {
         font-size: 3.5rem;
     }
-    
+
     .hero-content p {
         font-size: 1.4rem;
     }
-    
+
     .section-content {
         padding: 4rem;
     }
-    
+
     .btn {
         padding: 1.2rem 2.5rem;
         font-size: 1.1rem;
@@ -594,11 +627,11 @@ body {
     .hero-content h1 {
         font-size: 4rem;
     }
-    
+
     .section-content {
         padding: 6rem;
     }
-    
+
     .section {
         padding: 4rem 2rem;
     }
