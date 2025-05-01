@@ -95,3 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
         container.style.cursor = 'grab';
     }
 }); 
+
+document.addEventListener("scroll", () => {
+    const scrollDownIcon = document.getElementById("scrollDownIcon");
+    if (window.scrollY > 200) {
+        scrollDownIcon.classList.add("hidden");
+    } else {
+        scrollDownIcon.classList.remove("hidden");
+    }
+});

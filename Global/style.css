@@ -163,7 +163,40 @@ body {
     transform: translateY(-2px);
 }
 
-/* Responsividade */
+.scroll-down-icon {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 1; /* Start fully visible */
+    transform: translateY(0); /* No vertical movement initially */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.scroll-down-icon.hidden {
+    opacity: 0; /* Fade out */
+    transform: translateY(20px); /* Move down slightly */
+    pointer-events: none; /* Prevent interaction while hidden */
+}
+/* Show the icon only on desktop screens */
+@media (min-width: 1024px) {
+    .scroll-down-icon {
+        display: flex;
+    }
+}
+
 @media (min-width: 768px) {
     .hero-content h1 {
         font-size: 3.5rem;
