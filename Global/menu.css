@@ -97,3 +97,40 @@
 .close-menu:hover {
     transform: rotate(90deg);
 } 
+
+@media (min-width: 1024px) {
+    .menu-icon {
+        display: none; /* Hide the menu icon */
+    }
+
+    .menu-dropdown {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        transition: none;
+    }
+
+    .menu-item {
+        display: inline-block;
+        padding: 10px 20px;
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .menu-item:hover {
+        color: #00ff00;
+    }
+
+    .close-menu {
+        display: none; /* Hide the close button */
+    }
+}
