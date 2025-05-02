@@ -525,7 +525,7 @@ body {
     font-size: 25px;
 }
 
-/* Responsividade */
+
 @media (max-width: 480px) {
     .content-box {
         width: 363px;
@@ -558,6 +558,7 @@ body {
         padding: 1.2rem 2.5rem;
         font-size: 1.1rem;
     }
+    
 }
 
 @media (min-width: 1024px) {
@@ -594,6 +595,28 @@ body {
 
     .carousel-controls {
         margin-top: 30px;
+    }
+    .compliance {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        padding: 50px 3%; /* Ajusta o espaçamento */
+    }
+
+    .compliance .section-content {
+        padding: 20px; /* Remove o padding lateral excessivo */
+        padding-left: 0;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .compliance h2 {
+        font-size: 30px; /* Reduz o tamanho do título */
+    }
+
+    .compliance p {
+        font-size: 18px; /* Reduz o tamanho do texto */
+    }
+
+    .compliance__image {
+        height: 400px; /* Ajusta a altura da imagem */
     }
 }
 
