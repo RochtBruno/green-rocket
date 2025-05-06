@@ -262,6 +262,46 @@
     font-size: 18px;
 }
 
+/* SECTION GOVERNANCE*/
+
+.governance {
+    align-items: center;
+    padding: 130px 120px;
+}
+
+/* Container para imagem + título (alinhados horizontalmente) */
+.header-wrapper {
+    display: flex;
+    align-items: center;  /* Centraliza verticalmente */
+    gap: 15px;            /* Espaço entre a imagem e o título */
+    margin-bottom: 15px;  /* Espaço entre o título e o parágrafo */
+}
+
+.governance h2 {
+    color: var(--text-dark);
+    font-size: 35px;
+    margin: 0;  /* Remove margem padrão do h2 */
+}
+
+.governance p {
+    color: var(--text-dark);
+    font-size: 18px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 1280px;
+}
+
+/*image separeator*/
+
+.image__separator {
+    width: 100%; /* Opcional: define a largura da section */
+    display: inline-block; /* Faz a section se ajustar ao conteúdo (img) */
+}
+
+.image__separator img {
+    width: 100%; /* Opcional: faz a imagem ocupar a largura da section */
+    height: auto; /* Mantém a proporção original da imagem */
+}
 /* ==========================================================================
    leadership Section
    ========================================================================== */
