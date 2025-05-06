@@ -84,6 +84,11 @@ body {
     }
 }
 
+.white__separator{
+    width: 100%;
+    height: 8px;
+    background-color: #ffffff;
+}
 
 /* Hero Section */
 
@@ -93,7 +98,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 80vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -120,7 +125,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 1.5rem;
     max-width: 800px;
@@ -129,14 +134,14 @@ body {
 }
 
 .hero-content p {
-    font-size: 25px;
+    font-size: 18px;
     max-width: 600px;
     margin: 0 auto 2rem;
 }
 
 /* Seções */
 .section {
-    min-height: 100vh;
+    min-height: 80vh;
     position: relative;
     width: 100%;
     display: flex;
@@ -234,9 +239,8 @@ body {
 /* Botões */
 .btn {
     display: inline-block;
-    background-color: var(--text-light);
-    color: var(--primary-color);
-    border: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
     padding: 1rem 2rem;
     border-radius: 180px;
     font-size: 1rem;
@@ -248,7 +252,6 @@ body {
 }
 
 .btn:hover {
-    background-color: #f0f0f0;
     transform: translateY(-2px);
 }
 
@@ -482,12 +485,12 @@ body {
 }
 .compliance h2 {
     margin-bottom: 30px;
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .compliance p {
     margin-bottom: 30px;
-    font-size: 25px;
+    font-size: 18px;
 }
 
 .compliance__image {
@@ -517,14 +520,43 @@ body {
 
 .product h2 {
     margin-bottom: 30px;
-    font-size: 50px;
+    font-size: 35px;
 }
 
 .product p {
     margin-bottom: 30px;
-    font-size: 25px;
+    font-size: 18px;
+}
+.contact {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
 }
 
+.contact h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.contact p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
+}
+.contact .btn{
+    font-size: 18px;
+    padding: 16px 32px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
 
 @media (max-width: 480px) {
     .content-box {
@@ -543,11 +575,11 @@ body {
 
 @media (min-width: 768px) {
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 35px;
     }
 
     .hero-content p {
-        font-size: 1.4rem;
+        font-size: 18px;
     }
 
     .section-content {
@@ -558,12 +590,12 @@ body {
         padding: 1.2rem 2.5rem;
         font-size: 1.1rem;
     }
-    
+
 }
 
 @media (min-width: 1024px) {
     .hero-content h1 {
-        font-size: 4rem;
+        font-size: 35px;
     }
 
     .section-content {
@@ -608,7 +640,7 @@ body {
     }
 
     .compliance h2 {
-        font-size: 30px; /* Reduz o tamanho do título */
+        font-size: 35px; /* Reduz o tamanho do título */
     }
 
     .compliance p {

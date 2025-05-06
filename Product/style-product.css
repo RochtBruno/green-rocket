@@ -40,6 +40,7 @@
    ========================================================================== */
 .hero {
     position: relative;
+    align-items: center;
 }
 
 .hero::before {
@@ -57,7 +58,18 @@
 .hero-content {
     color: #fff;
     position: relative;
+    align-items: center;
     z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 35px;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 2rem;
 }
 
 /* ==========================================================================
@@ -393,10 +405,10 @@
 .cards-products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
-    max-width: 1200px; 
-    margin: 30px auto 0 auto; 
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
     color: var(--text-dark);
 }
 
@@ -437,34 +449,41 @@
     margin-bottom: 30px;
 }
 
-.section-contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.section-contact h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 24px;
 }
-.section-contact h2{
-    font-size: 50px;
-    margin-bottom: 20px;
 
+.section-contact p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
 }
-.section-contact p{
-    font-size: 25px;
-    margin-bottom: 30px;
+
+.section-contact .btn {
+    font-size: 18px;
+    padding: 16px 32px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
 }
 
 /* ==========================================================================
    Estilos Comuns
    ========================================================================== */
 .section-title {
-    font-size: 50px;
+    font-size: 35px;
     color: var(--text-dark);
     margin-bottom: 20px;
 }
 
 .section-text {
-    font-size: 25px;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
