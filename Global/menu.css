@@ -73,7 +73,7 @@
 .menu-item:nth-child(5) { transition-delay: 0.5s; }
 
 .menu-item:hover {
-    color: #00ff00;
+    color: #cfa468;
 }
 
 .close-menu {
@@ -96,7 +96,7 @@
 
 .close-menu:hover {
     transform: rotate(90deg);
-} 
+}
 
 @media (min-width: 1024px) {
     .menu-icon {
@@ -127,7 +127,7 @@
     }
 
     .menu-item:hover {
-        color: #00ff00;
+        color: #cfa468;
     }
 
     .close-menu {

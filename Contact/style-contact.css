@@ -36,6 +36,12 @@
     padding: 80px 20px;
 }
 
+.section-content h2{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
 .contact-form-container {
     max-width: 1111.85px;
     min-width: 331px;
