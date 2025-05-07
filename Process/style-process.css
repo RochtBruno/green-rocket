@@ -498,7 +498,7 @@ body {
 }
 
 .compliance__image {
-        position: relative;
+    position: relative;
     width: 40%;
     flex: 1;
     height: 950px;
