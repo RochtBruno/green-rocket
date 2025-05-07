@@ -467,43 +467,60 @@ body {
     transform: scale(1.2);
 }
 
+
+/*-----------------------------------------------------------------------*/
+
+
 .compliance {
-    background-color: #ffffff;
+    background-color: #032441;
+    height: 80vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 3%;
+    padding: 100px 0;
+    overflow: hidden;
 }
-
-
-.compliance .section-content {
-    color: #000000;
-    flex: 1;
-    padding: 20px;
-    padding-left: 150px;
-    text-align: left;
+.compliance__content{
+    width: 60%;
+    padding-left: 80px;
+    padding-right: 100px;
 }
 .compliance h2 {
     margin-bottom: 30px;
     font-size: 35px;
+    color: #ffffff;
 }
 
 .compliance p {
+    color: #ffffff;
     margin-bottom: 30px;
     font-size: 18px;
 }
 
 .compliance__image {
+        position: relative;
+    width: 40%;
     flex: 1;
-    width: 100%;
     height: 950px;
     background-image: url('../images/image\ \(10\).png');
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 2px;
-
+    overflow: hidden;
 }
+
+.compliance__image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 40%);
+    z-index: 1; /* Garante que o overlay fique acima da imagem */
+}
+
+/*------------------------------------------------------------------------------*/
+
 
 .product {
     background-color: var(--primary-color);

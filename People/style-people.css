@@ -185,63 +185,7 @@
     font-weight: 500;
 }
 
-/* ==========================================================================
-   Driven Section
-   ========================================================================== */
-.driven {
-    background-color: var(--text-light);
-    min-height: 80vh;
-    padding: 80px 20px;
-    display: flex;
-    align-items: center;
-}
 
-.driven::before {
-    display: none;
-}
-
-.driven .section-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.text-content {
-    flex: 1;
-    max-width: 500px;
-    color: var(--text-dark);
-}
-
-.driven h2 {
-    color: var(--text-dark);
-    font-size: 35px;
-}
-
-.driven p {
-    color: var(--text-dark);
-    font-size: 18px;
-}
-
-.content-box.ter {
-    width: 487px;
-    height: 566px;
-    background-image: url('../Imagens/card-3-people.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-    padding: 30px;
-    margin: 0;
-}
-
-.content-box.ter p {
-    font-size: 18px;
-    color: var(--text-dark);
-    line-height: 1.4;
-}
 
 /* ==========================================================================
    Culture Section
@@ -307,6 +251,7 @@
    ========================================================================== */
 .leadership{
     text-align: center;
+    background-color: #032441;
 }
 
 .leadership__content{
@@ -320,20 +265,79 @@
 }
 
 .content-box.pri{
-    background-image: url('../images/leadership-1.png');
+    width: 60%;
+    background-image: url('../images/leadership1-desktop.png');
     background-position: center;
     background-size: cover;
+    padding: 50px 140px;
 }
 
 .content-box.sec{
-    background-image: url('../images/leadership-2.png');
+    width: 60%;
+    background-image: url('../images/leadership2-desktop.png');
     background-size: cover;
     background-position: center;
+    padding: 50px 140px;
 }
+
+/* ==========================================================================
+   Driven Section
+   ========================================================================== */
+.driven{
+    background-color: #EDF2F7;
+    padding: 100px 2%;
+    width: 100%;
+}
+
+.driven-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.text-content{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.text-content h2{
+    font-size: 35px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.text-content p{
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
 .content-box.ter{
-    background-image: url('../images/driven-1.png');
-    background-position: center;
-    background-size: cover;
+    display: flex;
+    background-color: #ffffff;
+    height: auto;
+    padding: 0;
+    width: 50%;
+}
+.content-box.ter img{
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.content-box.ter h2{
+    font-size: 25px;
+    padding: 80px 50px 20px 50px;
+}
+.content-box.ter p{
+    font-size: 14px;
+    padding: 40px 50px 70px 50px;
 }
 /* ==========================================================================
    Media Queries
