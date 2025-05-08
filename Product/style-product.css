@@ -78,11 +78,9 @@
 .product-details {
     color: #000;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    text-align: center;
     min-height: auto !important;
-    height: 384.54px;
-    padding-left: 120px;
+    height: 385px;
 }
 
 .product-details::before {
@@ -92,16 +90,14 @@
 .product-details .section-content {
     max-width: 1200px;
     margin: 0;
-    text-align: left;
+    text-align: center;
     width: 100%;
-    padding-left: 40px;
 }
 
 .product-details h2 {
     color: #000;
     margin-bottom: 20px;
-    font-size: 50px;
-    text-align: left;
+    font-size: 35px;
     width: 1098px;
     margin-left: 0;
     margin-right: auto;
@@ -110,8 +106,7 @@
 .product-details p {
     color: #000;
     line-height: 1.6;
-    font-size: 20px;
-    text-align: left;
+    font-size:  18px;
     font-weight: 500;
     width: 1000px;
     margin-left: 0;
@@ -319,31 +314,7 @@
     width: 100%;
     height: 10px;
 }
-.green{
-    background-color: #33B863;
-}
-.blue{
-    background-color: #3382B8;
-}
-.purple{
-    background-color: #8733B8;
-}
-.brown{
-    background-color: #B83436;
-}
 
-.section-image-title-strains{
-    background-image: url('../images/product-type1.png');
-}
-.section-image-title-small-flower{
-    background-image: url('../images/product-type2.png');
-}
-.section-image-title-k25{
-    background-image: url('../images/product-type3.png');
-}
-.section-image-title-clones{
-    background-image: url('../images/product-type4.png');
-}
 /* ==========================================================================
    Cards de Produtos
    ========================================================================== */
@@ -359,7 +330,6 @@
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
     width: 165px;
     height: 116px;
@@ -380,10 +350,10 @@
     align-items: center;
 }
 .section-all-products h2{
-    font-size: 50px;
+    font-size: 35px;
 }
 .section-all-products p{
-    font-size: 25px;
+    font-size: 18px;
     margin-top: 30px;
 }
 
@@ -398,7 +368,7 @@
 
 .section-all-products-cards h2{
     color: var(--text-dark);
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -407,45 +377,93 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 30px auto 0 auto;
     color: var(--text-dark);
 }
 
 .cards-products > div {
-    margin: 0 auto;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
     height: 170px;
     width: 230px;
-    border: 3px solid var(--text-dark);
     font-weight: bold;
     font-size: 20px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px; /* Adiciona bordas arredondadas */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cards-products > div:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.cards-products > div img{
+    margin-bottom: 15px;
+}
+
+.cards-products > div p{
+    font-size: 18px;
+}
+
+.catalog{
+    padding: 0px 2% 30px 2%;
+}
+
+.catalog__card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/catalog-card1.png');
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+    height: 300px;
+    max-width: 1440px;
+    margin: 30px auto;
+    text-align: center;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.catalog__card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    border-radius: 24px;
+}
+
+
+.catalog__card h2{
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 35px;
+    width: 60%;
+}
+
+.catalog__card .btn{
+    position: relative;
+    z-index: 2;
+    background-color: var(--primary-color);
 }
 
 .section-looking{
-    background-color: var(--box-text);
+    background-color: #032441;
     height: 320px;
     text-align: center;
+
 }
 .section-looking h2{
-    font-size: 50px;
-    color: var(--text-dark);
+    font-size: 35px;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 .section-looking p{
-    color: var(--text-dark);
-    font-size: 25px;
+    color: #ffffff;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
@@ -581,22 +599,19 @@
     }
 
     .cards-products > div {
-        width: 165px;
-        height: 115px;
-        margin: 0;
+        margin: 30px auto;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-dark);
-        border: 2px solid var(--text-dark);
-        padding: 10px;
+        flex-direction: column;
+        height: 140px;
+        width: 180px;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
     }
 
     .cards-products > div p {
         font-size: 16px;
-        line-height: 1.3;
         color: var(--text-dark);
-        font-weight: bold;
         margin: 0;
     }
 
