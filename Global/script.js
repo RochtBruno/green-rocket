@@ -104,3 +104,26 @@ document.addEventListener("scroll", () => {
         scrollDownIcon.classList.remove("hidden");
     }
 });
+
+function handleParallaxAndReveal() {
+    const sections = document.querySelectorAll('.section, .hero, .section-contact');
+    const scrollY = window.scrollY;
+    const windowH = window.innerHeight;
+
+    sections.forEach(section => {
+        // Parallax background
+        section.style.backgroundPositionY = `${-scrollY * 0.3 + section.offsetTop * 0.2}px`;
+
+        // Reveal animation
+        const rect = section.getBoundingClientRect();
+        if (rect.top < windowH * 0.85 && rect.bottom > windowH * 0.15) {
+            section.classList.add('visible');
+        } else {
+            section.classList.remove('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', handleParallaxAndReveal);
+window.addEventListener('resize', handleParallaxAndReveal);
+document.addEventListener('DOMContentLoaded', handleParallaxAndReveal);
