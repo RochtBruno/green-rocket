@@ -35,73 +35,180 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
     });
+})
 
-    // Carrossel
-    const track = document.querySelector('.carousel-track');
-    const container = document.querySelector('.carousel-container');
-    const items = document.querySelectorAll('.carousel-item');
+document.addEventListener('DOMContentLoaded', function() {
+    // Menu mobile
+    const menuIcon = document.getElementById('menuIcon');
+    const menuDropdown = document.getElementById('menuDropdown');
+    const closeMenu = document.getElementById('closeMenu');
     
-    if (track && container && items.length > 0) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+    menuIcon.addEventListener('click', function() {
+        menuDropdown.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeMenu.addEventListener('click', function() {
+        menuDropdown.style.display = 'none';
+        document.body.style.overflow = '';
+    });
 
-        // Mouse events
-        container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            container.style.cursor = 'grabbing';
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
+    // Controle de seções
+    const sections = document.querySelectorAll('.scroll-section');
+    const scrollIcon = document.getElementById('scrollDownIcon');
+    const scrollIndicators = document.getElementById('scrollIndicators');
+    let currentSection = 0;
+    let isAnimating = false;
+    
+    // Cria os indicadores
+    function createIndicators() {
+        sections.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.className = 'scroll-indicator';
+            if (index === 0) indicator.classList.add('active');
+            
+            indicator.addEventListener('click', () => {
+                if (!isAnimating && index !== currentSection) {
+                    navigateToSection(index);
+                }
+            });
+            
+            scrollIndicators.appendChild(indicator);
         });
-
-        container.addEventListener('mouseleave', () => {
-            isDown = false;
-            container.style.cursor = 'grab';
+    }
+    
+    // Navegação para seção específica
+    function navigateToSection(index) {
+        if (isAnimating || index < 0 || index >= sections.length) return;
+        
+        isAnimating = true;
+        const direction = index > currentSection ? 1 : -1;
+        
+        // Esconde a seção atual
+        gsap.to(sections[currentSection], {
+            opacity: 0,
+            y: direction > 0 ? -10 : 10,
+            duration: 0.1,
+            ease: "power2.inOut",
+            onComplete: () => {
+                sections[currentSection].classList.remove('active');
+            }
         });
-
-        container.addEventListener('mouseup', () => {
-            isDown = false;
-            container.style.cursor = 'grab';
+        
+        // Mostra a nova seção
+        sections[index].classList.add('active');
+        gsap.fromTo(sections[index], 
+            { opacity: 0, y: direction > 0 ? 10 : -10 },
+            { 
+                opacity: 1, 
+                y: 0,
+                duration: 0.1,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    currentSection = index;
+                    isAnimating = false;
+                    updateUI();
+                }
+            }
+        );
+        
+        // Animação dos textos
+        gsap.fromTo(sections[index].querySelector('.hero-content, .section-content'), 
+            { opacity: 0, y: 15 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                delay: 0,
+                ease: "power2.out"
+            }
+        );
+    }
+    
+    // Navegação por direção
+    function navigateSections(direction) {
+        const newSection = currentSection + direction;
+        navigateToSection(newSection);
+    }
+    
+    // Atualiza UI (ícone e indicadores)
+    function updateUI() {
+        // Atualiza indicadores
+        document.querySelectorAll('.scroll-indicator').forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSection);
         });
-
-        container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
+        
+        // Mostra/esconde ícone de scroll
+        if (currentSection === sections.length - 1) {
+            gsap.to(scrollIcon, {
+                opacity: 0,
+                duration: 0.1,
+                ease: "power2.out",
+                onComplete: () => {
+                    scrollIcon.style.display = 'none';
+                }
+            });
+        } else {
+            scrollIcon.style.display = 'flex';
+            gsap.to(scrollIcon, {
+                opacity: 0.9,
+                duration: 0.1,
+                delay: 0.1,
+                ease: "power2.out"
+            });
+        }
+    }
+    
+    // Configura controles de navegação
+    function setupNavigation() {
+        // Wheel event
+        window.addEventListener('wheel', function(e) {
+            if (Math.abs(e.deltaY) < 5 || isAnimating) return;
+            navigateSections(Math.sign(e.deltaY));
+        }, { passive: true });
+        
+        // Keyboard events
+        window.addEventListener('keydown', function(e) {
+            if (isAnimating) return;
+            if (e.key === 'ArrowDown') navigateSections(1);
+            if (e.key === 'ArrowUp') navigateSections(-1);
         });
-
+        
+        // Scroll icon click
+        scrollIcon.addEventListener('click', function() {
+            if (!isAnimating) navigateSections(1);
+        });
+        
         // Touch events
-        container.addEventListener('touchstart', (e) => {
-            isDown = true;
-            startX = e.touches[0].pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-        });
-
-        container.addEventListener('touchend', () => {
-            isDown = false;
-        });
-
-        container.addEventListener('touchmove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.touches[0].pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-        });
-
-        // Adiciona cursor grab ao container
-        container.style.cursor = 'grab';
+        let touchStartY = 0;
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        document.addEventListener('touchend', function(e) {
+            if (isAnimating) return;
+            const touchEndY = e.changedTouches[0].clientY;
+            const diff = touchStartY - touchEndY;
+            if (Math.abs(diff) > 50) {
+                navigateSections(diff > 0 ? 1 : -1);
+            }
+        }, { passive: true });
     }
-}); 
-
-document.addEventListener("scroll", () => {
-    const scrollDownIcon = document.getElementById("scrollDownIcon");
-    if (window.scrollY > 200) {
-        scrollDownIcon.classList.add("hidden");
-    } else {
-        scrollDownIcon.classList.remove("hidden");
-    }
+    
+    // Inicialização
+    createIndicators();
+    setupNavigation();
+    updateUI();
+    
+    // Mostra o ícone após um breve delay
+    setTimeout(() => {
+        if (currentSection !== sections.length - 1) {
+            scrollIcon.style.display = 'flex';
+            gsap.to(scrollIcon, {
+                opacity: 0.9,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+        }
+    }, 1000);
 });
-

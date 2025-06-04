@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Rocket</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="../Global/style.css">
     <link rel="stylesheet" href="../Global/menu.css">
     <link rel="stylesheet" href="./Home/style-home.css">
@@ -30,16 +32,17 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero">
+    <main >
+        <section class="hero scroll-section active">
             <img src="./images/production-field.png" alt="Hero Image" class="section-image">
             <div class="hero-content">
                 <h1>Pharmaceutical cannabis grown in Stellenbosch</h1>
                 <p class="hero-description">Cultivated under natural sunlight, regulated protocols and scientific precision — from the heart of South Africa's agricultural capital.</p>
             </div>
         </section>
-        <div class="white__separator"></div>
-        <section class="section community">
+        <!-- <div class="white__separator"></div> -->
+
+        <section class="section community scroll-section">
             <img src="./images/community.png" alt="Community Image" class="section-image">
             <div class="section-content">
                 <h2>Our Community</h2>
@@ -47,8 +50,8 @@
                 <a href="#" class="btn">Learn more</a>
             </div>
         </section>
-        <div class="white__separator"></div>
-        <section class="section process">
+        <!-- <div class="white__separator"></div> -->
+        <section class="section process scroll-section">
             <img src="./images/stardard-control.png" alt="Process Image" class="section-image">
             <div class="section-content">
                 <h2>A Standardized, Controlled Approach</h2>
@@ -56,8 +59,8 @@
                 <a href="#" class="btn">Learn more</a>
             </div>
         </section>
-        <div class="white__separator"></div>
-        <section class="section product">
+        <!-- <div class="white__separator"></div> -->
+        <section class="section product scroll-section">
             <img src="./images/product.png" alt="Product Image" class="section-image">
             <div class="section-content">
                 <h2>Our product</h2>
@@ -65,16 +68,16 @@
                 <a href="#" class="btn">Explore our products</a>
             </div>
         </section>
-        <div class="white__separator"></div>
-        <section class="section foundation">
+        <!-- <div class="white__separator"></div> -->
+        <section class="section foundation scroll-section">
             <img src="./images/child.png" alt="Foundation Image" class="section-image">
             <div class="section-content">
                 <h2>The Green Rocket Foundation</h2>
                 <a href="#" class="btn">About our Future Impact</a>
             </div>
         </section>
-        <div class="white__separator"></div>
-        <section class="section-contact">
+        <!-- <div class="white__separator"></div> -->
+        <section class="section-contact scroll-section">
             <div class="section-content">
                 <h2>Interested in Green Rocket products?</h2>
                 <p>Contact for availability & B2B Orders</p>
@@ -84,6 +87,9 @@
     </main>
     <div class="scroll-down-icon" id="scrollDownIcon">
         ↓
+    </div>
+    <div class="scroll-indicators" id="scrollIndicators">
+    <!-- Os indicadores serão gerados via JavaScript -->
     </div>
     <script src="../Global/script.js"></script>
 </body>
