@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
         function animateScroll(currentTime) {
             if (!startTime) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / 800, 1); // 800ms de duração
+            const progress = Math.min(timeElapsed / 500, 1); // 800ms de duração
             
             window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
             
-            if (timeElapsed < 800) {
+            if (timeElapsed < 500) {
                 requestAnimationFrame(animateScroll);
             } else {
                 isScrolling = false;
