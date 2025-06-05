@@ -54,20 +54,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configura o IntersectionObserver
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            const section = entry.target;
+            const direction = entry.isIntersecting ? 
+                (entry.boundingClientRect.top < 0 ? 'down' : 'up') : 
+                (entry.boundingClientRect.top < 0 ? 'up' : 'down');
+    
             if (entry.isIntersecting) {
-                // Adiciona classe 'active' quando a seção entra
-                entry.target.classList.add('active');
+                // Seção entrando na viewport
+                section.classList.remove('exiting-up', 'exiting-down');
+                section.classList.add('active', `entering-${direction}`);
                 
-                // Atualiza o índice da seção atual
-                currentSectionIndex = Array.from(sections).indexOf(entry.target);
+                // Remove classes de entrada após a animação
+                setTimeout(() => {
+                    section.classList.remove(`entering-${direction}`);
+                }, 700);
             } else {
-                // Remove classe 'active' quando a seção sai
-                entry.target.classList.remove('active');
+                // Seção saindo da viewport
+                section.classList.remove('active', 'entering-up', 'entering-down');
+                section.classList.add(`exiting-${direction}`);
             }
         });
     }, { 
-        threshold: 0.5,
-        rootMargin: '0px 0px -50px 0px' // Ajuste para ativar antes do centro
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
     // Observa todas as seções

@@ -14,14 +14,6 @@ html::-webkit-scrollbar {
     display: none;
 }
 
-.hero {
-    height: 100vh;
-    min-height: auto;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
 
 .hero::before {
     content: "";
@@ -36,7 +28,14 @@ html::-webkit-scrollbar {
         rgba(0, 43, 42, 0.3) 100%);
     z-index: 1;
 }
-
+.hero{
+    background-image: url("../images/production-field.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
 .hero-content {
     position: relative;
     z-index: 2;
@@ -63,13 +62,12 @@ html::-webkit-scrollbar {
 /* ==========================================================================
    Community Section
    ========================================================================== */
-.section .community {
+.section.community {
+    background-image: url("../images/community.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     height: 100vh;
-    min-height: auto;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    position: relative;
 }
 
 .community::before {
@@ -113,6 +111,30 @@ html::-webkit-scrollbar {
     transition: all 0.3s ease;
 }
 
+
+.section.process{
+    background-image: url("../images/stardard-control.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.section.product{
+    background-image: url("../images/product.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.section.foundation{
+    background-image: url("../images/child.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
 
 /* ==========================================================================
    Estilos Comuns das Seções
@@ -204,16 +226,6 @@ html::-webkit-scrollbar {
     overflow: hidden;
 }
 
-/* Ajuste para a imagem de fundo */
-.section-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* Ajuste para o conteúdo */
 .section-content, 
 .hero-content {
     position: relative;
@@ -255,36 +267,46 @@ html::-webkit-scrollbar {
     transform: translateY(30px);
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* Classe ativa quando a seção está visível */
-.section.active .section-content,
-.hero.active .hero-content {
+.scroll-section .section-content,
+.scroll-section .hero-content {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Quando ENTRANDO POR BAIXO (scroll down) */
+.scroll-section.entering-down .section-content,
+.scroll-section.entering-down .hero-content {
+    transform: translateY(100px);
+}
+
+/* Quando ENTRANDO POR CIMA (scroll up) */
+.scroll-section.entering-up .section-content,
+.scroll-section.entering-up .hero-content {
+    transform: translateY(-100px);
+}
+
+/* Quando ATIVA (visível) */
+.scroll-section.active .section-content,
+.scroll-section.active .hero-content {
     opacity: 1;
     transform: translateY(0);
 }
-.scroll-section:not(.active) .section-content,
-.scroll-section:not(.active) .hero-content {
+
+/* Quando SAINDO POR CIMA (scroll down) */
+.scroll-section.exiting-up .section-content,
+.scroll-section.exiting-up .hero-content {
     opacity: 0;
-    transform: translateY(-30px);
-    transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transform: translateY(-500px);
+    transition: all 1s cubic-bezier(0.5, 0, 0.75, 0);
 }
-/* Atrasos progressivos para os elementos */
-.section.active h2 {
-    transition-delay: 0.2s;
-}
-.section.active p {
-    transition-delay: 0.4s;
-}
-.section.active .btn {
-    transition-delay: 0.6s;
-}
-.scroll-section:not(.active) h2 {
-    transition-delay: 0s;
-}
-.scroll-section:not(.active) p {
-    transition-delay: 0.1s;
-}
-.scroll-section:not(.active) .btn {
-    transition-delay: 0.2s;
+
+/* Quando SAINDO POR BAIXO (scroll up) */
+.scroll-section.exiting-down .section-content,
+.scroll-section.exiting-down .hero-content {
+    opacity: 0;
+    transform: translateY(500px);
+    transition: all 1s cubic-bezier(0.5, 0, 0.75, 0);
 }
 .section-contact {
     height: 100vh;
