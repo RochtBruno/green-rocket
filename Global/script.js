@@ -1,155 +1,173 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuIcon = document.getElementById('menuIcon');
-    const menuDropdown = document.getElementById('menuDropdown');
-    const closeMenu = document.getElementById('closeMenu');
-    const header = document.querySelector('.header');
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
 
-    // Toggle menu
-    menuIcon.addEventListener('click', () => {
-        menuIcon.classList.add('active');
-        menuDropdown.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
+function toggleMenu(active) {
+  const menuIcon = document.getElementById("menuIcon");
+  const menuDropdown = document.getElementById("menuDropdown");
+  menuIcon.classList.toggle("active", active);
+  menuDropdown.classList.toggle("active", active);
+  document.body.style.overflow = active ? "hidden" : "";
+}
 
-    // Close menu
-    closeMenu.addEventListener('click', () => {
-        menuIcon.classList.remove('active');
-        menuDropdown.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+function handleHeaderScroll() {
+  const header = document.querySelector(".header");
+  window.scrollY > 50
+    ? header.classList.add("scrolled")
+    : header.classList.remove("scrolled");
+}
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menuDropdown.contains(e.target) && !menuIcon.contains(e.target)) {
-            menuIcon.classList.remove('active');
-            menuDropdown.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+function handleScrollDownIcon() {
+  const scrollDownIcon = document.getElementById("scrollDownIcon");
+  scrollDownIcon.classList.toggle("hidden", window.scrollY > 200);
+}
 
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
+function initMenuEvents() {
+  const menuIcon = document.getElementById("menuIcon");
+  const closeMenu = document.getElementById("closeMenu");
+  const menuDropdown = document.getElementById("menuDropdown");
+
+  menuIcon.addEventListener("click", () => toggleMenu(true));
+  closeMenu.addEventListener("click", () => toggleMenu(false));
+
+  document.addEventListener("click", (e) => {
+    if (!menuDropdown.contains(e.target) && !menuIcon.contains(e.target)) {
+      toggleMenu(false);
+    }
+  });
+
+  window.addEventListener("scroll", handleHeaderScroll);
+}
+
+function initScrollDownVisibility() {
+  window.addEventListener("scroll", handleScrollDownIcon);
+}
+
+function initScrollSections() {
+  const sections = document.querySelectorAll(".scroll-section");
+  let currentSectionIndex = 0;
+  let isScrolling = false;
+
+  function smoothScrollTo(targetIndex) {
+    if (isScrolling) return;
+  
+    // Forçar um reflow antes de iniciar novas animações
+    document.body.getBoundingClientRect();
+    if (isScrolling || targetIndex < 0 || targetIndex >= sections.length)
+      return;
+
+    isScrolling = true;
+    const currentSection = sections[currentSectionIndex];
+    const targetSection = sections[targetIndex];
+    currentSection.classList.add("exiting");
+
+    setTimeout(() => {
+      currentSection.classList.remove("exiting", "entering");
+
+      const start = window.pageYOffset;
+      const end = targetSection.offsetTop;
+      const distance = end - start;
+      let startTime = null;
+
+      function animate(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / 100, 1);
+        window.scrollTo(0, start + distance * easeInOutCubic(progress));
+
+        if (timeElapsed < 300) {
+          requestAnimationFrame(animate);
         } else {
-            header.classList.remove('scrolled');
+          currentSectionIndex = targetIndex;
+          targetSection.classList.add("entering");
+          isScrolling = false;
         }
+      }
+
+      requestAnimationFrame(animate);
+    }, 200);
+  }
+
+  // Mouse wheel scroll
+  window.addEventListener(
+    "wheel",
+    (e) => {
+      e.preventDefault();
+      if (isScrolling) return;
+      smoothScrollTo(currentSectionIndex + (e.deltaY > 0 ? 1 : -1));
+    },
+    { passive: false }
+  );
+
+  // Touch scroll
+  let touchStartY = 0;
+  window.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartY = e.touches[0].clientY;
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "touchend",
+    (e) => {
+      const diff = touchStartY - e.changedTouches[0].clientY;
+      if (Math.abs(diff) > 50) {
+        smoothScrollTo(currentSectionIndex + (diff > 0 ? 1 : -1));
+      }
+    },
+    { passive: false }
+  );
+
+  // Ativa a primeira seção
+  if (sections.length > 0) {
+    sections[0].classList.add("active");
+  }
+}
+
+function initSectionAnimationOnScroll() {
+  const sections = document.querySelectorAll(".scroll-section");
+  let previousScroll = window.scrollY;
+
+  function handleScroll() {
+    const currentScroll = window.scrollY;
+    previousScroll = currentScroll;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const isHalfVisible =
+        rect.top < window.innerHeight * 0.7 &&
+        rect.bottom > window.innerHeight * 0.3;
+
+      section.classList.remove("entering", "exiting");
+
+      if (isHalfVisible) {
+        section.classList.add("entering", "entered");
+      } else if (section.classList.contains("entered")) {
+        section.classList.add("exiting");
+      }
     });
-})
+  }
 
-document.addEventListener("scroll", () => {
-    const scrollDownIcon = document.getElementById("scrollDownIcon");
-    if (window.scrollY > 200) {
-        scrollDownIcon.classList.add("hidden");
-    } else {
-        scrollDownIcon.classList.remove("hidden");
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
     }
-});
+  });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('.scroll-section');
-    let currentSectionIndex = 0;
-    let isScrolling = false;
+  handleScroll();
+}
 
-    // Configura o IntersectionObserver
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const section = entry.target;
-            const direction = entry.isIntersecting ? 
-                (entry.boundingClientRect.top < 0 ? 'down' : 'up') : 
-                (entry.boundingClientRect.top < 0 ? 'up' : 'down');
-    
-            if (entry.isIntersecting) {
-                // Seção entrando na viewport
-                section.classList.remove('exiting-up', 'exiting-down');
-                section.classList.add('active', `entering-${direction}`);
-                
-                // Remove classes de entrada após a animação
-                setTimeout(() => {
-                    section.classList.remove(`entering-${direction}`);
-                }, 700);
-            } else {
-                // Seção saindo da viewport
-                section.classList.remove('active', 'entering-up', 'entering-down');
-                section.classList.add(`exiting-${direction}`);
-            }
-        });
-    }, { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    // Observa todas as seções
-    sections.forEach(section => observer.observe(section));
-
-    // Função para scroll suave
-    function smoothScrollTo(targetIndex) {
-        if (isScrolling || targetIndex < 0 || targetIndex >= sections.length) return;
-        
-        isScrolling = true;
-        const target = sections[targetIndex];
-        const targetPosition = target.offsetTop;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
-
-        function animateScroll(currentTime) {
-            if (!startTime) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / 500, 1); // 800ms de duração
-            
-            window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
-            
-            if (timeElapsed < 500) {
-                requestAnimationFrame(animateScroll);
-            } else {
-                isScrolling = false;
-                currentSectionIndex = targetIndex;
-            }
-        }
-
-        requestAnimationFrame(animateScroll);
-    }
-
-    function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    // Controle de scroll com roda do mouse
-    window.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        
-        if (isScrolling) return;
-        
-        if (e.deltaY > 0) {
-            smoothScrollTo(currentSectionIndex + 1); // Scroll para baixo
-        } else {
-            smoothScrollTo(currentSectionIndex - 1); // Scroll para cima
-        }
-    }, { passive: false });
-
-    // Controle para touch devices
-    let touchStartY = 0;
-
-    window.addEventListener('touchstart', (e) => {
-        touchStartY = e.touches[0].clientY;
-    }, { passive: true });
-
-    window.addEventListener('touchend', (e) => {
-        const touchEndY = e.changedTouches[0].clientY;
-        const diff = touchStartY - touchEndY;
-        
-        if (Math.abs(diff) > 50) { // Sensibilidade do swipe
-            if (diff > 0) {
-                smoothScrollTo(currentSectionIndex + 1); // Swipe para cima
-            } else {
-                smoothScrollTo(currentSectionIndex - 1); // Swipe para baixo
-            }
-        }
-    }, { passive: false });
-
-    // Ativa a primeira seção ao carregar
-    if (sections.length > 0) {
-        sections[0].classList.add('active');
-    }
+// Inicialização
+window.addEventListener("DOMContentLoaded", () => {
+  initMenuEvents();
+  initScrollDownVisibility();
+  initScrollSections();
+  initSectionAnimationOnScroll();
 });

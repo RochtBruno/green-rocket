@@ -1,373 +1,392 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 html {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* scroll-snap-type: y mandatory; */
+  scroll-behavior: smooth;
 }
 
-/* WebKit (Chrome, Safari) */
 html::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
 
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg,
-        rgba(0, 43, 42, 0.7) 0%,
-        rgba(0, 43, 42, 0.5) 50%,
-        rgba(0, 43, 42, 0.3) 100%);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 43, 42, 0.7) 0%,
+    rgba(0, 43, 42, 0.5) 50%,
+    rgba(0, 43, 42, 0.3) 100%
+  );
+  z-index: 1;
 }
-.hero{
-    background-image: url("../images/production-field.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+.hero {
+  background-image: url("../images/production-field.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
-    font-size: 35px;
-    font-weight: bold;
-    color: var(--text-light);
-    margin-bottom: 24px;
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 24px;
 }
 
 .hero-description {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--text-light);
-    margin-bottom: 32px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-light);
+  margin-bottom: 32px;
 }
 
 /* ==========================================================================
    Community Section
    ========================================================================== */
 .section.community {
-    background-image: url("../images/community.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
+  background-image: url("../images/community.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 .community::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg,
-        rgba(0, 43, 42, 0.7) 0%,
-        rgba(0, 43, 42, 0.5) 50%,
-        rgba(0, 43, 42, 0.3) 100%);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 43, 42, 0.7) 0%,
+    rgba(0, 43, 42, 0.5) 50%,
+    rgba(0, 43, 42, 0.3) 100%
+  );
+  z-index: 1;
 }
 
 .community .section-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 600px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 600px;
 }
 
 .community h2 {
-    font-size: 10px;
-    margin-bottom: 24px;
-    color: var(--text-light);
+  font-size: 10px;
+  margin-bottom: 24px;
+  color: var(--text-light);
 }
 
 .community p {
-    font-size: 24px;
-    margin-bottom: 32px;
-    color: var(--text-light);
+  font-size: 24px;
+  margin-bottom: 32px;
+  color: var(--text-light);
 }
 
 .community .btn {
-    font-size: 18px;
-    padding: 16px 32px;
-    background-color: var(--primary-color);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
+  font-size: 18px;
+  padding: 16px 32px;
+  background-color: var(--primary-color);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
-
-.section.process{
-    background-image: url("../images/stardard-control.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
+.section.process {
+  background-image: url("../images/stardard-control.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
-.section.product{
-    background-image: url("../images/product.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
+.section.product {
+  background-image: url("../images/product.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
-.section.foundation{
-    background-image: url("../images/child.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
+.section.foundation {
+  background-image: url("../images/child.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
 }
 
 /* ==========================================================================
    Estilos Comuns das Seções
    ========================================================================== */
 .section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .section .section-content {
-    text-align: center;
-    max-width: 800px;
-    z-index: 2;
-    position: relative;
+  text-align: center;
+  max-width: 800px;
+  z-index: 2;
+  position: relative;
 }
 
 .section h2 {
-    font-size: 35px;
-    font-weight: bold;
-    color: var(--text-light);
-    margin-bottom: 24px;
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 24px;
 }
 
 .section p {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--text-light);
-    margin-bottom: 32px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-light);
+  margin-bottom: 32px;
 }
 
 .section .btn {
-    font-size: 18px;
-    padding: 16px 32px;
-    background-color: var(--primary-color);
-    transition: all 0.3s ease;
+  font-size: 18px;
+  padding: 16px 32px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
 }
-
 
 /* ==========================================================================
    Seção de Contato
    ========================================================================== */
 .section-contact {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
 }
 
 .section-contact .section-content {
-    text-align: center;
-    max-width: 800px;
+  text-align: center;
+  max-width: 800px;
 }
 
 .section-contact h2 {
-    font-size: 35px;
-    font-weight: bold;
-    color: var(--text-light);
-    margin-bottom: 24px;
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 24px;
 }
 
 .section-contact p {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--text-light);
-    margin-bottom: 32px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-light);
+  margin-bottom: 32px;
 }
 
 .section-contact .btn {
-    font-size: 18px;
-    padding: 16px 32px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border: 2px solid #fff;
-    transition: all 0.3s ease;
+  font-size: 18px;
+  padding: 16px 32px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
 }
-.hero, 
-.section, 
+.hero,
+.section,
 .section-contact {
-    scroll-snap-align: start;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.section-content, 
+.section-content,
 .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .hero::before,
 .community::before,
 .process::before,
 .product::before,
 .foundation::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg,
-        rgba(0, 43, 42, 0.7) 0%,
-        rgba(0, 43, 42, 0.5) 50%,
-        rgba(0, 43, 42, 0.3) 100%);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 43, 42, 0.7) 0%,
+    rgba(0, 43, 42, 0.5) 50%,
+    rgba(0, 43, 42, 0.3) 100%
+  );
+  z-index: 1;
 }
 .white__separator {
-    display: none;
+  display: none;
 }
 
-.section-content,
-.hero-content {
+/* Mantenha os keyframes como estão */
+@keyframes fadeInUp {
+  from {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.scroll-section .section-content,
-.scroll-section .hero-content {
-    opacity: 0;
-    will-change: transform, opacity;
-    transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-/* Quando ENTRANDO POR BAIXO (scroll down) */
-.scroll-section.entering-down .section-content,
-.scroll-section.entering-down .hero-content {
-    transform: translateY(100px);
-}
-
-/* Quando ENTRANDO POR CIMA (scroll up) */
-.scroll-section.entering-up .section-content,
-.scroll-section.entering-up .hero-content {
-    transform: translateY(-100px);
-}
-
-/* Quando ATIVA (visível) */
-.scroll-section.active .section-content,
-.scroll-section.active .hero-content {
+    transform: translateY(15px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
+  }
 }
 
-/* Quando SAINDO POR CIMA (scroll down) */
-.scroll-section.exiting-up .section-content,
-.scroll-section.exiting-up .hero-content {
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
     opacity: 0;
-    transform: translateY(-500px);
-    transition: all 1s cubic-bezier(0.5, 0, 0.75, 0);
+    transform: translateY(15px);
+  }
 }
 
-/* Quando SAINDO POR BAIXO (scroll up) */
-.scroll-section.exiting-down .section-content,
-.scroll-section.exiting-down .hero-content {
-    opacity: 0;
-    transform: translateY(500px);
-    transition: all 1s cubic-bezier(0.5, 0, 0.75, 0);
+/* Reset completo para os containers */
+.hero-content,
+.section-content {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0); /* Usando translate3d para forçar GPU */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  contain: layout paint style; /* Otimização de renderização */
 }
+
+/* Animações de entrada - simplificadas */
+.scroll-section.entering .hero-content,
+.scroll-section.entering .section-content {
+  animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Animações de saída - ajustadas */
+.scroll-section.exiting .hero-content,
+.scroll-section.exiting .section-content {
+  animation: fadeOutDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: none;
+  animation-fill-mode: both; /* Garante que o estado final seja mantido */
+}
+
+/* Remova completamente as transições dos elementos filhos */
+.hero-content > *,
+.section-content > * {
+  opacity: 1 !important; /* Mantém os filhos sempre visíveis */
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Garantia de que seções ocultas não renderizam */
+.scroll-section.hidden {
+  display: none;
+  visibility: hidden;
+}
+
 .section-contact {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    position: relative; /* Adicionado */
-    scroll-snap-align: start; /* Adicionado */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  position: relative; /* Adicionado */
+  scroll-snap-align: start; /* Adicionado */
 }
 
 .section-contact .section-content {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-    position: relative;
-    z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+  position: relative;
+  z-index: 2;
 }
 
 .section-contact.active .section-content {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 @media (max-width: 768px) {
-    .section h2,
-    .section-contact h2 {
-        font-size: 25px;
-    }
+  .section h2,
+  .section-contact h2 {
+    font-size: 25px;
+  }
 
-    .section p,
-    .section-contact p {
-        font-size: 12.5px;
-    }
+  .section p,
+  .section-contact p {
+    font-size: 12.5px;
+  }
 
-    .section .btn,
-    .section-contact .btn {
-        font-size: 14px;
-        padding: 12px 24px;
-    }
+  .section .btn,
+  .section-contact .btn {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
 
-    .hero-content h1 {
-        font-size: 25px;
-    }
+  .hero-content h1 {
+    font-size: 25px;
+  }
 
-    .hero-description {
-        font-size: 12.5px;
-    }
+  .hero-description {
+    font-size: 12.5px;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-content h1,
-    .community h2 {
-        font-size: 36px;
-    }
+  .hero-content h1,
+  .community h2 {
+    font-size: 36px;
+  }
 
-    .hero-description,
-    .community p {
-        font-size: 18px;
-    }
+  .hero-description,
+  .community p {
+    font-size: 18px;
+  }
 }
