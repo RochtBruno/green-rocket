@@ -363,28 +363,51 @@ body {
   
 .estufa path {
     fill: #dfdfdf; /* cor padrão */
-    stroke: #333; 
+    stroke: #0C291F; 
+    stroke-width: 0.1px;
+    transition: all 0.5s;
 }
 
 .estufa.active path {
-    fill: #4c8c75;
-    stroke: #1a1a1a;
+    fill: #296451;
+    stroke: #0C291F; 
+    stroke-width: 0.2px;
   }
 
 .estufa:hover path {
-    fill: #4c8c75;
-    stroke: #1a1a1a;
+    fill: #296451;
+    stroke: #0C291F; 
     cursor: pointer;
   }
 
+.path-estufa{
+    fill: #ececec;
+    stroke: #565656;
+    stroke-width: 0.2px;
+}
+
 .estufa:hover path.sombra {
-    fill: rgba(0, 0, 0, 0.5) !important;
+    fill: rgba(0, 0, 0, 0.3) !important;
     transition: 0.3s;
 }
 
 .estufa.active path.sombra {
-    fill: rgba(0, 0, 0, 0.5) !important;
-  }
+    fill: rgba(0, 0, 0, 0.3) !important;
+}
+
+.estufa:hover path.door{
+    fill: #1b493a !important;
+    transition: 0.3s;
+}
+
+.estufa.active path.door{
+    fill: #1b493a !important;
+}
+
+.estufa path.teste{
+    fill: red !important;
+}
+
 
 .estufa-1 .estufa-indicator {
     font-weight: bold;

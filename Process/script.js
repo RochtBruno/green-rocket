@@ -1,7 +1,7 @@
 const estufas = document.querySelectorAll('.estufa');
 const cards = document.querySelectorAll('.process__card');
 
-let activeIndex = 0; // controle do ativo atual
+let activeIndex = 0;
 
 estufas.forEach((estufa, index) => {
   estufa.addEventListener('click', () => {
@@ -19,7 +19,7 @@ estufas.forEach((estufa, index) => {
     setTimeout(() => {
       // Ativa o card correspondente
       cards[index].classList.add('active');
-    }, 50); // 50ms ou 100ms: ajusta conforme o tempo de transição do CSS
+    }, 200); // 50ms ou 100ms: ajusta conforme o tempo de transição do CSS
 
     activeIndex = index; // atualiza controle
   });
