@@ -155,14 +155,16 @@ function initSectionAnimationOnScroll() {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         handleScroll();
-        ticking = false;
+        // ticking = false;
       });
       ticking = true;
     }
   });
 
-  handleScroll();
+  // Aguarda o carregamento completo da página para evitar glitches iniciais
+  window.addEventListener("load", handleScroll);
 }
+
 
 // Inicialização
 window.addEventListener("DOMContentLoaded", () => {

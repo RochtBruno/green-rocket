@@ -16,21 +16,6 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 43, 42, 0.7) 0%,
-    rgba(0, 43, 42, 0.5) 50%,
-    rgba(0, 43, 42, 0.3) 100%
-  );
-  z-index: 1;
-}
 .hero {
   background-image: url("../images/production-field.png");
   background-attachment: fixed;
@@ -38,28 +23,35 @@ html::-webkit-scrollbar {
   background-size: cover;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 950px;
+  width: 100%;
+  margin-left: 5%;
+  margin-top: 270px;
 }
 
 .hero-content h1 {
-  font-size: 35px;
+  font-size: 88px;
   font-weight: bold;
+  text-transform: uppercase;
   color: var(--text-light);
   margin-bottom: 24px;
 }
 
 .hero-description {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 1;
   color: var(--text-light);
   margin-bottom: 32px;
+  padding-right: 200px;
 }
 
 /* ==========================================================================
@@ -71,49 +63,35 @@ html::-webkit-scrollbar {
   background-position: center;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
-.community::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 43, 42, 0.7) 0%,
-    rgba(0, 43, 42, 0.5) 50%,
-    rgba(0, 43, 42, 0.3) 100%
-  );
-  z-index: 1;
-}
 
 .community .section-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 600px;
+  max-width: 950px;
+  width: 100%;
+  margin-top: 270px;
 }
 
 .community h2 {
-  font-size: 10px;
-  margin-bottom: 24px;
+  font-size: 88px;
+  font-weight: bold;
+  text-transform: uppercase;
   color: var(--text-light);
+  margin-bottom: 24px;
 }
 
 .community p {
-  font-size: 24px;
-  margin-bottom: 32px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
   color: var(--text-light);
-}
-
-.community .btn {
-  font-size: 18px;
-  padding: 16px 32px;
-  background-color: var(--primary-color);
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  margin-bottom: 32px;
+  padding-right: 200px;
 }
 
 .section.process {
@@ -122,6 +100,34 @@ html::-webkit-scrollbar {
   background-position: center;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.process .section-content{
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  width: 100%;
+  margin-top: 270px;
+}
+
+.process h2 {
+  font-size: 88px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.process p {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  padding-right: 200px;
 }
 
 .section.product {
@@ -130,95 +136,68 @@ html::-webkit-scrollbar {
   background-position: center;
   background-size: cover;
   height: 100vh;
-}
-
-.section.foundation {
-  background-image: url("../images/child.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
-
-/* ==========================================================================
-   Estilos Comuns das Seções
-   ========================================================================== */
-.section {
-  height: 100vh;
   display: flex;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-.section .section-content {
-  text-align: center;
-  max-width: 800px;
+.product .section-content{
+  position: relative;
   z-index: 2;
-  position: relative;
+  max-width: 950px;
+  width: 100%;
+  margin-top: 270px;
 }
 
-.section h2 {
-  font-size: 35px;
+.product h2 {
+  font-size: 88px;
   font-weight: bold;
+  text-transform: uppercase;
   color: var(--text-light);
   margin-bottom: 24px;
 }
 
-.section p {
-  font-size: 18px;
+.product p {
+  font-size: 22px;
   font-weight: 500;
   line-height: 1;
   color: var(--text-light);
   margin-bottom: 32px;
+  padding-right: 200px;
 }
 
-.section .btn {
-  font-size: 18px;
-  padding: 16px 32px;
-  background-color: var(--primary-color);
-  transition: all 0.3s ease;
-}
-
-/* ==========================================================================
-   Seção de Contato
-   ========================================================================== */
 .section-contact {
   height: 100vh;
   display: flex;
+  justify-content: left;
   align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
 }
 
 .section-contact .section-content {
-  text-align: center;
-  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  width: 100%;
+  margin-top: 270px;
 }
 
 .section-contact h2 {
-  font-size: 35px;
+  font-size: 88px;
   font-weight: bold;
+  text-transform: uppercase;
   color: var(--text-light);
   margin-bottom: 24px;
 }
 
 .section-contact p {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 1;
   color: var(--text-light);
   margin-bottom: 32px;
+  padding-right: 200px;
 }
 
-.section-contact .btn {
-  font-size: 18px;
-  padding: 16px 32px;
-  background-color: var(--primary-color);
-  color: #fff;
-  border: 2px solid #fff;
-  transition: all 0.3s ease;
-}
 .hero,
 .section,
 .section-contact {
@@ -229,48 +208,11 @@ html::-webkit-scrollbar {
   overflow: hidden;
 }
 
-.section-content,
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.hero::before,
-.community::before,
-.process::before,
-.product::before,
-.foundation::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 43, 42, 0.7) 0%,
-    rgba(0, 43, 42, 0.5) 50%,
-    rgba(0, 43, 42, 0.3) 100%
-  );
-  z-index: 1;
-}
-.white__separator {
-  display: none;
-}
-
 /* Mantenha os keyframes como estão */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -285,7 +227,7 @@ html::-webkit-scrollbar {
   }
   to {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(50px);
   }
 }
 
@@ -313,41 +255,88 @@ html::-webkit-scrollbar {
   animation-fill-mode: both; /* Garante que o estado final seja mantido */
 }
 
-/* Remova completamente as transições dos elementos filhos */
-.hero-content > *,
-.section-content > * {
-  opacity: 1 !important; /* Mantém os filhos sempre visíveis */
-  transform: none !important;
-  transition: none !important;
-}
-
-/* Garantia de que seções ocultas não renderizam */
-.scroll-section.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-.section-contact {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  position: relative; /* Adicionado */
-  scroll-snap-align: start; /* Adicionado */
-}
-
-.section-contact .section-content {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-  position: relative;
-  z-index: 2;
-}
-
 .section-contact.active .section-content {
   opacity: 1;
   transform: translateY(0);
+}
+
+.footer{
+  border-top: 0.1px solid white;
+  background-color: black;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 4%;
+}
+.footer__left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer__left p{
+  font-size: 22px;
+  color: white;
+}
+
+.footer__center{
+  text-align: center;
+  width: 15%;
+}
+.footer__center a{
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+.footer__right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35%;
+}
+.footer__right-1{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  padding-bottom: 35px;
+}
+.footer__right-1 p{
+  font-size: 22px;
+  color: white;
+}
+
+.footer__right-1-icons{
+  padding-right: 45px;
+}
+
+.footer__right-1-icons i{
+  color: white;
+  font-size: 30px;
+  margin-right: 8px;
+}
+
+.footer__right-2{
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 35px;
+}
+
+.footer__right-2 p{
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+
+.footer__right-3 a{
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 8px;
 }
 
 /* ==========================================================================
