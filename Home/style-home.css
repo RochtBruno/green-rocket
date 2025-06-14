@@ -4,11 +4,12 @@ html {
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-family: "Fivo Sans", Arial, sans-serif;
+  color: white;
 }
 html {
   scrollbar-width: none;
   -ms-overflow-style: none;
-  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
 }
 
@@ -28,17 +29,18 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-.hero-content {
+.hero-content,
+.section-content{
   position: relative;
   z-index: 2;
   max-width: 950px;
   width: 100%;
   margin-left: 5%;
-  margin-top: 270px;
+  margin-top: 180px;
 }
 
 .hero-content h1 {
-  font-size: 88px;
+  font-size: clamp(2rem, 8vw, 5.5rem);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-light);
@@ -68,17 +70,8 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-
-.community .section-content {
-  position: relative;
-  z-index: 2;
-  max-width: 950px;
-  width: 100%;
-  margin-top: 270px;
-}
-
 .community h2 {
-  font-size: 88px;
+  font-size: clamp(2rem, 8vw, 5.5rem);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-light);
@@ -105,16 +98,8 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-.process .section-content{
-  position: relative;
-  z-index: 2;
-  max-width: 950px;
-  width: 100%;
-  margin-top: 270px;
-}
-
 .process h2 {
-  font-size: 88px;
+  font-size: clamp(2rem, 8vw, 5.5rem);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-light);
@@ -141,16 +126,8 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-.product .section-content{
-  position: relative;
-  z-index: 2;
-  max-width: 950px;
-  width: 100%;
-  margin-top: 270px;
-}
-
 .product h2 {
-  font-size: 88px;
+  font-size: clamp(2rem, 8vw, 5.5rem);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-light);
@@ -173,16 +150,8 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-.section-contact .section-content {
-  position: relative;
-  z-index: 2;
-  max-width: 950px;
-  width: 100%;
-  margin-top: 270px;
-}
-
 .section-contact h2 {
-  font-size: 88px;
+  font-size: clamp(2rem, 8vw, 5.5rem);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--text-light);
@@ -208,7 +177,6 @@ html::-webkit-scrollbar {
   overflow: hidden;
 }
 
-/* Mantenha os keyframes como estão */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -231,28 +199,25 @@ html::-webkit-scrollbar {
   }
 }
 
-/* Reset completo para os containers */
 .hero-content,
 .section-content {
   opacity: 0;
-  transform: translate3d(0, 20px, 0); /* Usando translate3d para forçar GPU */
+  transform: translate3d(0, 20px, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-  contain: layout paint style; /* Otimização de renderização */
+  contain: layout paint style;
 }
 
-/* Animações de entrada - simplificadas */
 .scroll-section.entering .hero-content,
 .scroll-section.entering .section-content {
   animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-/* Animações de saída - ajustadas */
 .scroll-section.exiting .hero-content,
 .scroll-section.exiting .section-content {
   animation: fadeOutDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   pointer-events: none;
-  animation-fill-mode: both; /* Garante que o estado final seja mantido */
+  animation-fill-mode: both;
 }
 
 .section-contact.active .section-content {
@@ -342,6 +307,16 @@ html::-webkit-scrollbar {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media (max-width: 1400px){
+  .hero-content,
+  .section-content{
+    margin-top: 120px;
+  }
+  .hero-content h1,
+  .section-content h2{
+    font-size: 65px;
+  }
+}
 @media (max-width: 768px) {
   .section h2,
   .section-contact h2 {
