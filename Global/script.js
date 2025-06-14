@@ -150,16 +150,16 @@ function initSectionAnimationOnScroll() {
     });
   }
 
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        handleScroll();
-        // ticking = false;
-      });
-      ticking = true;
-    }
-  });
+  // let ticking = false;
+  // window.addEventListener("scroll", () => {
+  //   if (!ticking) {
+  //     window.requestAnimationFrame(() => {
+  //       handleScroll();
+  //       // ticking = false;
+  //     });
+  //     ticking = true;
+  //   }
+  // });
 
   // Aguarda o carregamento completo da página para evitar glitches iniciais
   window.addEventListener("load", handleScroll);
