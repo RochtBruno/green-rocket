@@ -16,17 +16,8 @@ html {
 html::-webkit-scrollbar {
   display: none;
 }
-.overlay{
-  background-color: rgba(0,0,0,0.5);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 .hero {
-  background-image: url("../images/production-field.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  position: relative; 
   width: 100%;
   height: 100vh;
   display: flex;
@@ -34,8 +25,37 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
+.scroll-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scroll-section .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scroll-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
 .hero-content,
-.section-content{
+.section-content {
   position: relative;
   z-index: 2;
   max-width: 950px;
@@ -65,10 +85,8 @@ html::-webkit-scrollbar {
    Community Section
    ========================================================================== */
 .section.community {
-  background-image: url("../images/community.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  position: relative; 
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: left;
