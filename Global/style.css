@@ -42,19 +42,6 @@ body {
     font-weight: bold;
 }
 
-/* Seções */
-.section, .hero {
-    min-height: 80vh;
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 80px 20px;
-}
-
-
-
 /* Botões */
 .btn {
     display: inline-block;
@@ -73,87 +60,4 @@ body {
 
 .btn:hover {
     transform: translateY(-2px);
-}
-
-.scroll-down-icon {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 24px;
-    color: var(--text-light);
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    z-index: 1000;
-    opacity: 1; /* Start fully visible */
-    transform: translateY(0); /* No vertical movement initially */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-}
-
-.scroll-down-icon.hidden {
-    opacity: 0; /* Fade out */
-    transform: translateY(20px); /* Move down slightly */
-    pointer-events: none; /* Prevent interaction while hidden */
-}
-/* Show the icon only on desktop screens */
-@media (min-width: 1024px) {
-    .scroll-down-icon {
-        display: flex;
-    }
-}
-
-@media (min-width: 768px) {
-    .hero-content h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1.4rem;
-    }
-
-    .section-content {
-        padding: 4rem;
-    }
-
-    .btn {
-        padding: 1.2rem 2.5rem;
-        font-size: 1.1rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero-content h1 {
-        font-size: 4rem;
-    }
-
-    /* .section-content {
-        padding: 6rem;
-    } */
-
-    .section {
-        padding: 4rem 2rem;
-    }
-}
-
-/* Section-specific styles */
-.process, .community, .product, .foundation, .leadership, .driven, .management, .governance, .culture {
-    background-color: transparent;
-}
-
-.section-contact {
-    min-height: 50vh;
-    background-color: var(--primary-color);
-    color: var(--primary-color);
-}
-
-.section-contact .btn {
-    background-color: var(--text-light);
-    color: var(--primary-color);
 }
