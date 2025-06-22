@@ -251,7 +251,7 @@ html::-webkit-scrollbar {
 .footer{
   border-top: 0.1px solid white;
   background-color: black;
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -261,6 +261,7 @@ html::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 85%;
 }
 .footer__left p{
   font-size: 22px;
@@ -268,7 +269,6 @@ html::-webkit-scrollbar {
 }
 
 .footer__center{
-  text-align: center;
   width: 15%;
 }
 .footer__center a{
@@ -310,6 +310,7 @@ html::-webkit-scrollbar {
 .footer__right-2{
   color: white;
   border-bottom: 1px solid white;
+  padding-top: 25px;
   padding-bottom: 35px;
 }
 
@@ -324,6 +325,7 @@ html::-webkit-scrollbar {
   text-decoration: none;
   color: white;
   font-size: 22px;
+  margin-top: 15px;
   margin-bottom: 8px;
 }
 

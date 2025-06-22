@@ -393,7 +393,6 @@
     }
     .content-box.ter{
         display: flex;
-        flex-direction: column;
         width: 75%;
     }
     .content-box.ter img{
@@ -424,6 +423,18 @@
         width: 100%;
         max-width: 487px;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .content-box.ter{
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .content-box.ter img{
+        border-radius: 16px;
     }
 }
 
