@@ -2,14 +2,6 @@ function easeInOutCubic(t) {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
-function toggleMenu(active) {
-  const menuIcon = document.getElementById("menuIcon");
-  const menuDropdown = document.getElementById("menuDropdown");
-  menuIcon.classList.toggle("active", active);
-  menuDropdown.classList.toggle("active", active);
-  document.body.style.overflow = active ? "hidden" : "";
-}
-
 function handleHeaderScroll() {
   const header = document.querySelector(".header");
   window.scrollY > 50
@@ -150,21 +142,8 @@ function initSectionAnimationOnScroll() {
     });
   }
 
-  // let ticking = false;
-  // window.addEventListener("scroll", () => {
-  //   if (!ticking) {
-  //     window.requestAnimationFrame(() => {
-  //       handleScroll();
-  //       // ticking = false;
-  //     });
-  //     ticking = true;
-  //   }
-  // });
-
-  // Aguarda o carregamento completo da página para evitar glitches iniciais
   window.addEventListener("load", handleScroll);
 }
-
 
 // Inicialização
 window.addEventListener("DOMContentLoaded", () => {
