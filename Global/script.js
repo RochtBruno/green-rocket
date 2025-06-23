@@ -97,7 +97,6 @@ function initScrollSections() {
     { passive: false }
   );
 
-  // Ativa a primeira seção
   if (sections.length > 0) {
     sections[0].classList.add("active");
   }
@@ -128,51 +127,6 @@ function initSectionAnimationOnScroll() {
   }
   window.addEventListener("load", handleScroll);
 }
-
-    document.body.classList.add('loading');
-    const start = Date.now();
-
-    window.addEventListener('load', function () {
-        const loader = document.getElementById('loader');
-        const MIN_LOADING_TIME = 1500;
-
-        function hideLoader() {
-            loader.style.opacity = '0';
-            loader.style.visibility = 'hidden';
-            document.body.classList.remove('loading');
-
-            // Mostra o texto da primeira seção imediatamente
-            document.querySelector('.hero-content').style.opacity = '1';
-            document.querySelector('.hero-content').style.transform = 'none';
-
-            // Esconde o vídeo da primeira seção por 600ms
-            const heroVideo = document.querySelector('.hero .background-video');
-            if (heroVideo) {
-                heroVideo.classList.add('hide');
-                setTimeout(() => {
-                    heroVideo.classList.remove('hide');
-                }, 100);
-            }
-
-            // ⚠️ Diagnóstico rápido: força scroll para ativar animações baseadas em scroll
-            window.scrollTo(0, 1);
-            window.scrollTo(0, 0);
-            window.dispatchEvent(new Event('scroll'));
-        }
-
-        const elapsed = Date.now() - start;
-        const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsed);
-        setTimeout(hideLoader, remainingTime);
-
-        // vídeos carregam depois do conteúdo principal
-        const videos = document.querySelectorAll('video[data-src]');
-        videos.forEach(video => {
-            const source = video.querySelector('source');
-            source.src = video.getAttribute('data-src');
-            video.load();
-        });
-    });
-
 
 // Inicialização
 window.addEventListener("DOMContentLoaded", () => {
