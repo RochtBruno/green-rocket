@@ -2,14 +2,6 @@ function easeInOutCubic(t) {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
-function toggleMenu(active) {
-  const menuIcon = document.getElementById("menuIcon");
-  const menuDropdown = document.getElementById("menuDropdown");
-  menuIcon.classList.toggle("active", active);
-  menuDropdown.classList.toggle("active", active);
-  document.body.style.overflow = active ? "hidden" : "";
-}
-
 function handleHeaderScroll() {
   const header = document.querySelector(".header");
   window.scrollY > 50
@@ -17,27 +9,12 @@ function handleHeaderScroll() {
     : header.classList.remove("scrolled");
 }
 
-function handleScrollDownIcon() {
-  const scrollDownIcon = document.getElementById("scrollDownIcon");
-  scrollDownIcon.classList.toggle("hidden", window.scrollY > 200);
-}
+// function handleScrollDownIcon() {
+//   const scrollDownIcon = document.getElementById("scrollDownIcon");
+//   scrollDownIcon.classList.toggle("hidden", window.scrollY > 200);
+// }
 
-function initMenuEvents() {
-  const menuIcon = document.getElementById("menuIcon");
-  const closeMenu = document.getElementById("closeMenu");
-  const menuDropdown = document.getElementById("menuDropdown");
 
-  menuIcon.addEventListener("click", () => toggleMenu(true));
-  closeMenu.addEventListener("click", () => toggleMenu(false));
-
-  document.addEventListener("click", (e) => {
-    if (!menuDropdown.contains(e.target) && !menuIcon.contains(e.target)) {
-      toggleMenu(false);
-    }
-  });
-
-  window.addEventListener("scroll", handleHeaderScroll);
-}
 
 function initScrollDownVisibility() {
   window.addEventListener("scroll", handleScrollDownIcon);
@@ -168,7 +145,6 @@ function initSectionAnimationOnScroll() {
 
 // Inicialização
 window.addEventListener("DOMContentLoaded", () => {
-  initMenuEvents();
   initScrollDownVisibility();
   initScrollSections();
   initSectionAnimationOnScroll();
