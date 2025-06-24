@@ -17,16 +17,23 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-.arrow-down-timer path {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: draw-border 5s linear forwards;
+#loader {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
 }
 
-@keyframes draw-border {
-  to {
-    stroke-dashoffset: 0;
-  }
+#loader img {
+  width: 250px;
+  height: auto;
 }
 
 .hero {
