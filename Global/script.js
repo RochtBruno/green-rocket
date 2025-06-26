@@ -93,7 +93,7 @@ function initScrollSections() {
     "touchend",
     (e) => {
       const diff = touchStartY - e.changedTouches[0].clientY;
-      if (Math.abs(diff) > 50) {
+      if (Math.abs(diff) > 5) {
         smoothScrollTo(currentSectionIndex + (diff > 0 ? 1 : -1));
       }
     },
