@@ -151,6 +151,20 @@ window.addEventListener('load', function () {
     }, 1500);
 });
 
+function parallaxBackgroundVideos() {
+  const videos = document.querySelectorAll('.background-video');
+  const scrollY = window.scrollY || window.pageYOffset;
+  videos.forEach(video => {
+    const speed = 0.8; 
+    const offset = video.parentElement.offsetTop;
+    const yPos = (scrollY - offset) * speed;
+    video.style.transform = `translateY(${yPos}px)`;
+  });
+}
+
+window.addEventListener('scroll', parallaxBackgroundVideos);
+window.addEventListener('resize', parallaxBackgroundVideos);
+
 // Inicialização
 window.addEventListener("DOMContentLoaded", () => {
   initScrollDownVisibility();
