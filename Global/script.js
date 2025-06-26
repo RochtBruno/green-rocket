@@ -1,3 +1,5 @@
+document.body.style.overflow = "hidden";
+
 function easeInOutCubic(t) {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
@@ -80,25 +82,43 @@ function initScrollSections() {
   );
 
   // Touch scroll
-  let touchStartY = 0;
-  window.addEventListener(
-    "touchstart",
-    (e) => {
-      touchStartY = e.touches[0].clientY;
-    },
-    { passive: true }
-  );
+  // let touchStartY = 0;
+  // window.addEventListener(
+  //   "touchstart",
+  //   (e) => {
+  //     touchStartY = e.touches[0].clientY;
+  //   },
+  //   { passive: true }
+  // );
 
-  window.addEventListener(
-    "touchend",
-    (e) => {
-      const diff = touchStartY - e.changedTouches[0].clientY;
-      if (Math.abs(diff) > 5) {
-        smoothScrollTo(currentSectionIndex + (diff > 0 ? 1 : -1));
-      }
-    },
-    { passive: false }
-  );
+  // window.addEventListener(
+  //   "touchend",
+  //   (e) => {
+  //     const diff = touchStartY - e.changedTouches[0].clientY;
+  //     if (Math.abs(diff) > 5) {
+  //       smoothScrollTo(currentSectionIndex + (diff > 0 ? 1 : -1));
+  //     }
+  //   },
+  //   { passive: false }
+  // );
+let touchStartY = 0;
+let touchEndY = 0;
+
+window.addEventListener("touchstart", (e) => {
+  touchStartY = e.touches[0].clientY;
+}, { passive: false });
+
+window.addEventListener("touchmove", (e) => {
+  e.preventDefault(); // Impede o scroll natural
+}, { passive: false });
+
+window.addEventListener("touchend", (e) => {
+  touchEndY = e.changedTouches[0].clientY;
+  const diff = touchStartY - touchEndY;
+  if (Math.abs(diff) > 30) {
+    smoothScrollTo(currentSectionIndex + (diff > 0 ? 1 : -1));
+  }
+}, { passive: false });
 
   if (sections.length > 0) {
     sections[0].classList.add("active");
@@ -148,7 +168,7 @@ window.addEventListener('load', function () {
     setTimeout(() => { 
         loader.style.display = 'none';
     }, 500);
-    }, 1500);
+    }, 1200);
 });
 
 function parallaxBackgroundVideos() {
