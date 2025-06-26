@@ -89,11 +89,23 @@ html::-webkit-scrollbar {
   margin-top: 180px;
 }
 
+.section-content p{
+  font-size: 22px;
+}
+
 .arrow-down{
   cursor: pointer;
   position: absolute;
   z-index: 10;
-  top: 74%;
+  top: 68%;
+  left: 5%;
+}
+
+.arrow-down-hero{
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 75%;
   left: 5%;
 }
 
@@ -134,22 +146,6 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-/* .community h2 {
-  font-size: clamp(2rem, 8vw, 5.5rem);
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 24px;
-} */
-
-/* .community p {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--text-light);
-  margin-bottom: 32px;
-  padding-right: 200px;
-} */
 
 .section.process {
   height: 100vh;
@@ -158,22 +154,6 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-.process h2 {
-  font-size: clamp(2rem, 8vw, 5.5rem);
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 24px;
-}
-
-/* .process p {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--text-light);
-  margin-bottom: 32px;
-  padding-right: 200px;
-} */
 
 .section.product {
   height: 100vh;
@@ -182,7 +162,7 @@ html::-webkit-scrollbar {
   align-items: center;
 }
 
-.product h2 {
+.section-content h2 {
   font-size: clamp(2rem, 8vw, 5.5rem);
   font-weight: bold;
   text-transform: uppercase;
@@ -190,14 +170,14 @@ html::-webkit-scrollbar {
   margin-bottom: 24px;
 }
 
-/* .product p {
+.section-content p {
   font-size: 22px;
   font-weight: 500;
   line-height: 1;
   color: var(--text-light);
   margin-bottom: 32px;
   padding-right: 200px;
-} */
+} 
 
 .section-contact {
   height: 100vh;
@@ -205,23 +185,6 @@ html::-webkit-scrollbar {
   justify-content: left;
   align-items: center;
 }
-
-.section-contact h2 {
-  font-size: clamp(2rem, 8vw, 5.5rem);
-  font-weight: bold;
-  text-transform: uppercase;
-  color: var(--text-light);
-  margin-bottom: 24px;
-}
-
-/* .section-contact p {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--text-light);
-  margin-bottom: 32px;
-  padding-right: 200px;
-} */
 
 .hero,
 .section,

@@ -11,6 +11,7 @@ function handleHeaderScroll() {
 
 function handleScrollDownIcon() {
   const scrollDownIcon = document.getElementById("scrollDownIcon");
+  if(!scrollDownIcon) return;
   scrollDownIcon.classList.toggle("hidden", window.scrollY > 200);
 }
 
