@@ -97,7 +97,7 @@ html::-webkit-scrollbar {
   cursor: pointer;
   position: absolute;
   z-index: 10;
-  top: 68%;
+  top: 70%;
   left: 5%;
 }
 
@@ -196,6 +196,11 @@ html::-webkit-scrollbar {
   overflow: hidden;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -220,25 +225,41 @@ html::-webkit-scrollbar {
 
 .hero-content,
 .section-content {
-  opacity: 0;
-  transform: translate3d(0, 40px, 0);
   backface-visibility: hidden;
   perspective: 1000px;
   contain: layout paint style;
 }
 
-.scroll-section.entering .hero-content,
-.scroll-section.entering .section-content {
-  animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+/* Estado inicial */
+.hero-content h1,
+.section-content h2 {
+  opacity: 0;
+}
+.hero-content p,
+.section-content p {
+  opacity: 0;
+  transform: translateY(70px);
 }
 
-.scroll-section.exiting .hero-content,
-.scroll-section.exiting .section-content {
-  animation: fadeOutDown 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  pointer-events: none;
-  animation-fill-mode: both;
+/* Entrada */
+.scroll-section.entering .hero-content h1,
+.scroll-section.entering .section-content h2 {
+  animation: fadeIn 2s forwards;
+}
+.scroll-section.entering .hero-content p,
+.scroll-section.entering .section-content p {
+  animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
+/* Saída */
+.scroll-section.exiting .hero-content h1,
+.scroll-section.exiting .section-content h2 {
+  animation: fadeOutDown 0.5s forwards;
+}
+.scroll-section.exiting .hero-content p,
+.scroll-section.exiting .section-content p {
+  animation: fadeOutDown 0.5s forwards;
+}
 .section-contact.active .section-content {
   opacity: 1;
   transform: translateY(0);
@@ -339,51 +360,6 @@ html::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 900px){
-  .footer{
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 50px 4%;
-  }
-  .footer__left{
-    display: flex;
-    flex-direction: column;
-    border-bottom: 0.5px solid white;
-    padding-bottom: 20px;
-    height: auto;
-    width: 90%;
-  }
-  .footer__left img{
-    width: 35%;
-  }
-  .footer__left p{
-    margin-top: 10px;
-    font-size: 22px;
-    color: white;
-  }
-
-  .footer__center{
-    width: 90%;
-    margin-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 0.5px solid white;
-    }
-  .footer__center a{
-    display: block;
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  .footer__right{
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 90%;
-  }
-}
-
-
 @media (max-width: 768px) {
   .section h2,
   .section-contact h2 {
@@ -435,8 +411,5 @@ html::-webkit-scrollbar {
   .section-content p {
     font-size: 20px;
     margin-top: 15px;
-  }
-    .footer__left img{
-    width: 75%;
   }
 }

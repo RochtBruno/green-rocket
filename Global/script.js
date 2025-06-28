@@ -168,14 +168,14 @@ window.addEventListener('load', function () {
     setTimeout(() => { 
         loader.style.display = 'none';
     }, 500);
-    }, 1200);
+    }, 800);
 });
 
 function parallaxBackgroundVideos() {
   const videos = document.querySelectorAll('.background-video');
   const scrollY = window.scrollY || window.pageYOffset;
   videos.forEach(video => {
-    const speed = 1.0; 
+    const speed = 0.8; 
     const offset = video.parentElement.offsetTop;
     const yPos = (scrollY - offset) * speed;
     video.style.transform = `translateY(${yPos}px)`;
