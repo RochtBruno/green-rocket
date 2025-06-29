@@ -57,7 +57,7 @@
     align-items: center;
     height: auto;
     min-height: 380px;
-    background-image: url('../images/product-header.png');
+    background-image: url('../../images/product-header.png');
     background-position: center;
     background-size: auto;
 }
@@ -409,17 +409,17 @@
     font-size: 18px;
 }
 
-/* .catalog{
+/* .product{
     padding: 0px 2% 30px 2%;
 }
 
-.catalog__card{
+.product__card{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../images/catalog-card1.png');
+    background-image: url('../images/product-card1.png');
     background-size: cover;
     background-position: center;
     width: 90%;
@@ -431,7 +431,7 @@
     overflow: hidden;
 }
 
-.catalog__card::before {
+.product__card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -444,7 +444,7 @@
 }
 
 
-.catalog__card h2{
+.product__card h2{
     position: relative;
     z-index: 2;
     color: #ffffff;
@@ -452,17 +452,27 @@
     width: 60%;
 }
 
-.catalog__card .btn{
+.product__card .btn{
     position: relative;
     z-index: 2;
     background-color: var(--primary-color);
 } */
 
-.catalog{
+.product{
     padding: 100px 2%;
 }
 
-.catalog__card{
+.product__card-link {
+  text-decoration: none;
+  width: 100%;
+  color: inherit;
+  display: block;
+}
+.product__card-link:visited {
+  color: inherit;
+}
+
+.product__card{
     margin: 0 auto;
     height: 300px;
     width: 80%;
@@ -472,42 +482,45 @@
     padding-left: 15px;
     padding-top: 21px;
 }
-.catalog__card:hover{
+
+
+
+.product__card:hover{
     transform: translateY(-5px);
     background-color: rgb(224, 224, 224);
 }
 
-.catalog__card-image{
+.product__card-image{
     background-color: #7e7e7e;
     height: 90%;
     width: 270px;
 }
 
-.catalog__card-text-wrapper{
+.product__card-text-wrapper{
     padding-left: 60px;
     padding-top: 30px;
     padding-bottom: 50px;
     width: 90%;
 }
 
-.catalog__card-title{
+.product__card-title{
     margin-bottom: 8px;
     font-size: 30px;
 }
 
-.catalog__card-subtitle{
+.product__card-subtitle{
     font-size: 30px;
 }
 
-.catalog__card-price{
+.product__card-price{
     margin-top: 50px;
     font-size: 30px;
 }
 
-.catalog__card-info{
+.product__card-info{
     margin-top: 20px;
     font-size: 19px;
-    width: 20%;
+    width: 40%;
     color: #00A650;
     padding: 3px 3px;
     background-color: #00a65069;
