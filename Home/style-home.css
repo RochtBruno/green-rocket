@@ -96,28 +96,16 @@ html::-webkit-scrollbar {
   font-size: 22px;
 }
 
-.arrow-down{
+.arrow-down-fixed {
+  position: fixed;
+  left: 5vw;
+  bottom: 17vh;
+  z-index: 100;
   cursor: pointer;
-  position: absolute;
-  z-index: 10;
-  top: 70%;
-  left: 5%;
-}
-
-.arrow-down-hero{
-  cursor: pointer;
-  position: absolute;
-  z-index: 10;
-  top: 75%;
-  left: 5%;
-}
-
-.arrow-down-contact{
-  cursor: pointer;
-  position: absolute;
-  z-index: 10;
-  top: 80%;
-  left: 5%;
+  font-size: 30px;
+  background-color: #00000073;
+  padding: 15px;
+  border-radius: 50%;
 }
 
 .hero-content h1 {
@@ -393,12 +381,6 @@ html::-webkit-scrollbar {
 
   .hero-description {
     font-size: 25px;
-  }
-  .arrow-down{
-    top: 70%;
-  }
-  .arrow-down-contact{
-    top: 70%;
   }
 }
 

@@ -152,11 +152,24 @@ function initSectionAnimationOnScroll() {
 }
 
 // Adiciona o evento de clique para cada seta
-document.querySelectorAll('.arrow-down').forEach(arrow => {
+document.querySelectorAll('.arrow-down-fixed').forEach(arrow => {
   arrow.addEventListener('click', function (e) {
-    let section = arrow.closest('.scroll-section');
-    if (section && typeof window.smoothScrollToSection === 'function') {
-      window.smoothScrollToSection(section, 1); // 1 = próxima seção
+    // Encontra a seção atualmente visível
+    const sections = document.querySelectorAll('.scroll-section');
+    let currentSection = null;
+    let minDiff = Infinity;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    sections.forEach(section => {
+      const diff = Math.abs(section.offsetTop - scrollY);
+      if (diff < minDiff) {
+        minDiff = diff;
+        currentSection = section;
+      }
+    });
+
+    if (currentSection && typeof window.smoothScrollToSection === 'function') {
+      window.smoothScrollToSection(currentSection, 1); // Vai para a próxima seção
     }
   });
 });
@@ -191,3 +204,30 @@ window.addEventListener("DOMContentLoaded", () => {
   initScrollSections();
   initSectionAnimationOnScroll();
 });
+
+
+function toggleArrowDownVisibility() {
+  const arrow = document.querySelector('.arrow-down-fixed');
+  const sections = document.querySelectorAll('.scroll-section');
+  if (!arrow || sections.length === 0) return;
+
+  // Detecta se está na última seção OU se está próximo do final da página
+  const lastSection = sections[sections.length - 1];
+  const lastRect = lastSection.getBoundingClientRect();
+  const threshold = 100; // px de tolerância do final
+
+  // Alternativa 1: pelo scroll (mais confiável)
+  const nearBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - threshold);
+
+  // Alternativa 2: pela seção visível
+  const isLastVisible = lastRect.top < window.innerHeight * 0.5 && lastRect.bottom > window.innerHeight * 0.2;
+
+  if (nearBottom || isLastVisible) {
+    arrow.style.display = 'none';
+  } else {
+    arrow.style.display = 'block';
+  }
+}
+window.addEventListener('scroll', toggleArrowDownVisibility);
+window.addEventListener('resize', toggleArrowDownVisibility);
+window.addEventListener('DOMContentLoaded', toggleArrowDownVisibility);

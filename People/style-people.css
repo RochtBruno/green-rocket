@@ -37,13 +37,13 @@
 }
 
 .background-video {
-  position: absolute;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translateZ(0);
+  z-index: -1;
 }
 
 
@@ -160,6 +160,14 @@
    Culture Section
    ========================================================================== */
 
+.culture{
+    align-items: center;
+    padding: 5px 120px;
+    text-align: center;
+    z-index: 1;
+    background-color: #fff;
+}
+
 .culture__content{
     text-align: center;
     margin: 120px auto;
@@ -184,6 +192,8 @@
     align-items: center;
     padding: 130px 120px;
     text-align: center;
+    z-index: 1;
+    background-color: #fff;
 }
 
 .governance h2 {
