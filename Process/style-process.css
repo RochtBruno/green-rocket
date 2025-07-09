@@ -33,21 +33,23 @@ body {
 
 
 .hero {
-    background-image: url('../images/process1.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 80vh;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    width: 100%;
-    z-index: 1;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
 }
 .overlay{
-    z-index: -1;
+    z-index: 1;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -55,28 +57,29 @@ body {
 }
 
 .hero-content {
-    text-align: center;
-    color: var(--text-light);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin-top: 100px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 30px;
 }
 
 .hero-content h1 {
-    font-size: 35px;
+    text-transform: uppercase;
+    font-size: 65px;
     font-weight: bold;
-    margin-bottom: 1.5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    color: var(--text-light);
+    margin-bottom: 24px;
 }
 
 .hero-content p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-light);
+    margin-bottom: 32px;
 }
+
 
 /* Seções */
 .section {
@@ -428,21 +431,20 @@ body {
     position: relative; 
     width: 600px; 
     height: 445px;
+    background-color: red;
 }
   
   /* Todos os cards sobrepostos, ocupando o mesmo espaço */
 .process__card {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
 
     opacity: 0;
     visibility: hidden;
     transform: scale(0.95) translateY(20px);
     filter: blur(4px);
-
     transition: 
         opacity 0.5s ease, 
         visibility 0.5s ease, 
@@ -479,8 +481,26 @@ body {
     text-align: justify;
 }
 
+.image_separator-1{
+    background-image: url("../images/image-separator-1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.image_separator-2{
+    background-image: url("../images/home_1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
 .compliance {
-    background-color: #032441;
+    background-color: #000;
     height: 80vh;
     display: flex;
     justify-content: space-between;
@@ -489,12 +509,14 @@ body {
     overflow: hidden;
 }
 .compliance__content{
-    width: 60%;
-    padding-left: 80px;
-    padding-right: 100px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
 }
 .compliance h2 {
     margin-bottom: 30px;
+    text-transform: uppercase;
     font-size: 35px;
     color: #ffffff;
 }
@@ -503,9 +525,10 @@ body {
     color: #ffffff;
     margin-bottom: 30px;
     font-size: 18px;
+    line-height: 1.5;
 }
 
-.compliance__image {
+/*.compliance__image {
     position: relative;
     width: 40%;
     flex: 1;
@@ -524,8 +547,8 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 40%);
-    z-index: 1; /* Garante que o overlay fique acima da imagem */
-}
+    z-index: 1; /* Garante que o overlay fique acima da imagem 
+}*/
 
 /*------------------------------------------------------------------------------*/
 
@@ -598,39 +621,6 @@ body {
     }
 }
 
-@media (min-width: 768px) {
-    .hero-content h1 {
-        font-size: 35px;
-    }
-
-    .hero-content p {
-        font-size: 18px;
-    }
-
-    .section-content {
-        padding: 4rem;
-    }
-
-    .btn {
-        padding: 1.2rem 2.5rem;
-        font-size: 1.1rem;
-    }
-
-}
-
-@media (min-width: 1024px) {
-    .hero-content h1 {
-        font-size: 35px;
-    }
-
-    .section-content {
-        padding: 6rem;
-    }
-
-    .section {
-        padding: 4rem 2rem;
-    }
-}
 
 @media (max-width: 1200px) {
     .step-box {

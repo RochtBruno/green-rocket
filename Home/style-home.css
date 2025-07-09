@@ -37,6 +37,9 @@ html::-webkit-scrollbar {
 }
 
 .hero {
+  background-image: url("../images/home_1.png");
+  background-position: center;
+  background-size: cover;
   position: relative; 
   width: 100%;
   height: 100vh;
@@ -180,10 +183,17 @@ html::-webkit-scrollbar {
 } 
 
 .section-contact {
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: left;
   align-items: center;
+  background-color: #000;
+}
+.section__contact__img{
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .hero,
