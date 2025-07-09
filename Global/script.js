@@ -62,7 +62,6 @@ function initScrollSections() {
     }, 350);
   }
 
-  // Exponha para uso externo (seta)
   window.smoothScrollToSection = function(section, direction) {
     const idx = Array.from(sections).indexOf(section);
     if (idx !== -1) {
@@ -81,26 +80,6 @@ function initScrollSections() {
     { passive: false }
   );
 
-  // Touch scroll
-  // let touchStartY = 0;
-  // window.addEventListener(
-  //   "touchstart",
-  //   (e) => {
-  //     touchStartY = e.touches[0].clientY;
-  //   },
-  //   { passive: true }
-  // );
-
-  // window.addEventListener(
-  //   "touchend",
-  //   (e) => {
-  //     const diff = touchStartY - e.changedTouches[0].clientY;
-  //     if (Math.abs(diff) > 5) {
-  //       smoothScrollTo(currentSectionIndex + (diff > 0 ? 1 : -1));
-  //     }
-  //   },
-  //   { passive: false }
-  // );
 let touchStartY = 0;
 let touchEndY = 0;
 
