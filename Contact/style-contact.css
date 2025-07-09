@@ -9,16 +9,18 @@
 
 /* Seção Hero */
 .hero {
-    height: 650px;
+    height: 90vh;
+    position: relative;
+    background-image: url("../images/contact 1.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .hero h1 {
     font-size: 49px;
 }
 
-.hero::before {
-    display: none;
-}
 
 .hero-content {
     display: flex;
@@ -53,6 +55,7 @@
     text-align: center;
     font-size: 35px;
     margin-bottom: 30px;
+    color: #fff;
 }
 
 .contact-form-container {
@@ -132,20 +135,15 @@
     padding: 80px 20px;
     height: 656.18px;
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-.contact-info::before {
-    display: none;
 }
 
 .contact-info-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
     margin: 40px auto;
-    max-width: 1200px;
     padding: 0 20px;
 }
 
@@ -165,7 +163,7 @@
 .contact-info-item {
     flex: 1;
     min-width: 363px;
-    text-align: center;
+    text-align: left;
     padding: 30px;
     background-color: var(--box-text);
     color: var(--text-dark);
@@ -215,19 +213,30 @@
     display: none;
 }
 
-.text__alignment{
-    text-align: center;
-    align-items: center; ;
-}
-.text__alignment h2{
-    font-size: 35px;
-    margin-bottom: 20px;
-    font-weight: bold;
+.section__product{
+    background-image: url("../images/flower-people-page.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
 }
 
-.text__alignment p{
-    font-size: 18px;
-    margin-bottom: 20px;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.section__product .section-content{
+    text-align: center;
+    z-index: 1;
 }
 /* Responsividade */
 @media (max-width: 768px) {
