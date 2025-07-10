@@ -282,7 +282,14 @@ body {
 .process__title{
     font-size: 35px;
     text-align: center;
-    margin-bottom: 70px ;
+    margin-bottom: 30px ;
+    text-transform: uppercase;
+}
+
+.process__text{
+    text-align: center;
+    width: 60%;
+    margin: 20px auto 40px auto;
 }
 .process__wrapper{
     position: relative;
@@ -481,8 +488,148 @@ body {
     text-align: justify;
 }
 
-.image_separator-1{
+.process__presentation{
+    background-color: #000;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.process__presentation__content{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.process__presentation__content h2{
+    color:#fff;
+    margin-top: 20px;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.process__presentation__content p{
+    color: #ffffff;
+    padding: 0 100px;
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.process__explained{
+    width: 100%;
+    background-color: #fff;
+}
+
+.process__explained-step{
+    display: flex;
+    width: 100%;
+    padding: 40px 0 0 0;
+}
+
+.process__explained-text{
+    width: 45%;
+    padding-left: 2%;
+    padding-right: 120px;
+}
+.process__explained-text h2{
+    font-size: 44px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.process__explained-text p{
+    font-size: 18px;
+}
+
+.process__explained-image{
+    width: 55%;
+    height: 500px;
+    background-image: url("../images/nursery.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.process__explained-image-1{
+    width: 55%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.process__explained-image-1 video{
+   position: absolute;
+    top: 50%;
+    left: 49%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-49%, -50%);
+    object-fit: cover;
+}
+
+.process__explained-image-2{
+    width: 55%;
+    height: 500px;
+    background-image: url("../images/nursery.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.process__explained-image-3{
+    width: 55%;
+    height: 500px;
+    background-image: url("../images/flowering_tunel.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.process__explained-image-4{
+    width: 55%;
+    height: 500px;
+    background-image: url("../images/curing.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.process__explained-image-5{
+    width: 55%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.process__explained-image-5 video{
+   position: absolute;
+    top: 50%;
+    left: 49%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-49%, -50%);
+    object-fit: cover;
+}
+
+.process__explained-image-6{
+    width: 55%;
+    height: 500px;
+    background-image: url("../images/secure_storage.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.image_separator{
     background-image: url("../images/image-separator-1.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.image_separator-1{
+    background-image: url("../images/image_separator-0.JPG");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
