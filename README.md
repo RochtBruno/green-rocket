@@ -14,7 +14,7 @@ O resultado alcançado foi a criação de uma aplicação funcional que atende a
 - **Versionamento:** Git e GitHub
 - **Outras ferramentas:** (Figma, Firefly)
 
-## 4.(Habilidades/Competências Adquiridas)
+## 4.Habilidades/Competências Adquiridas
 
 Durante o desenvolvimento deste projeto, foram adquiridas e aprimoradas diversas habilidades, tais como:
 
@@ -25,9 +25,9 @@ Durante o desenvolvimento deste projeto, foram adquiridas e aprimoradas diversas
 - Resolução de problemas e busca por soluções criativas;
 - (Adicione aqui outras habilidades específicas que você desenvolveu)
 
-## 5. Existem melhorias a serem feitas?
+## 5. melhorias a serem feitas
 
-Sim, como todo projeto em desenvolvimento contínuo, há oportunidades de melhorias, tais como:
+Como todo projeto em desenvolvimento contínuo, há oportunidades de melhorias, tais como:
 
 - Adicionar novas funcionalidades para ampliar o escopo do projeto;
 - Melhorar a interface do usuário e a experiência de uso;
