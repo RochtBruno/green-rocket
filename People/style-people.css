@@ -1,6 +1,17 @@
 /* ==========================================================================
    Common Styles
    ========================================================================== */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
 :root {
     --primary-color: #002B2A;
     --text-light: #ffffff;
@@ -340,6 +351,94 @@
         font-size: 18px;
     }
 
+    .leadership .section-content {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .leadership__content{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        gap: 40px;
+    }
+
+    .leadership h2 {
+        width: 100%;
+        font-size: 44px;
+        color: var(--text-light);
+        text-transform: uppercase;
+    }
+
+    .leadership p {
+        font-size: 18px;
+        color: var(--text-light);
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 0;
+        line-height: 1.5;
+    }
+
+    .driven-content{
+        flex-direction: column;
+    }
+
+    .text-content{
+        width: 100%;
+        display: flex;
+        padding: 80px 30px;
+    }
+
+    .text-content h2{
+        font-size: 40px;
+    }
+
+    .text-content p{
+        padding: 0 2%;
+    }
+
+    .driven-content-img{
+        display: none;
+    }
+
+    .governance {
+        align-items: center;
+        padding: 80px 50px;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .governance p {
+        width: 85%;
+    }
+
+    .culture{
+        align-items: center;
+        padding: 5px 25px;
+        text-align: center;
+        z-index: 1;
+        background-color: #fff;
+    }
+
+    .culture__content{
+        text-align: center;
+        margin: 120px auto;
+        padding: 0;
+    }
+
+    .culture__content h2{
+        text-transform: uppercase;
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .culture__content p {
+        font-size: 18px;
+        margin: 0 auto;
+        width: 85%;
+    }
 }
 
 @media (max-width: 480px) {

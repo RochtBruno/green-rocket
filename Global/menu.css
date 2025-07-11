@@ -1,125 +1,13 @@
 /* Menu Global */
-.menu-container {
-    position: relative;
-    background-color: blue;
-}
-
-/* .menu-icon {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.menu-icon span {
-    width: 30px;
-    height: 3px;
-    background-color: red;
-
-}
-
-.menu-dropdown {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    padding: 80px 20px;
-    transition: right 0.5s ease;
-    overflow-y: auto;
-    z-index: 999;
-}
-
-.menu-dropdown.active {
-    right: 0;
-}
-
-.menu-item {
-    display: block;
-    padding: 20px;
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 500;
-    opacity: 0;
-}
-
-.menu-dropdown.active .menu-item {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.menu-item:hover {
-    color: #cfa468;
-}
-
-.close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: var(--text-light);
-    font-size: 40px;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    transition: all 0.3s ease;
-}
-
-.close-menu:hover {
-    transform: rotate(90deg);
-} */
-
-/* @media (min-width: 1024px) {
-    .menu-icon {
-        display: none; 
-    }
-
-    .menu-dropdown {
-        position: static;
-        width: auto;
-        height: auto;
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        padding: 0;
-        transition: none;
-    }
-
-    .menu-item {
-        display: inline-block;
-        padding: 10px 20px;
-        color: var(--text-light);
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-
-    .menu-item:hover {
-        color: #cfa468;
-    }
-
-    .close-menu {
-        display: none;
-    }
-} */
 
 
 *{
     margin: 0;
     padding: 0;
+}
+
+.menu-container {
+    position: relative;
 }
 
 .menu-item{

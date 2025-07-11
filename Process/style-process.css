@@ -12,7 +12,7 @@
     --transition: all 0.3s ease;
 }
 
-body {
+body,html {
     font-family: "Fivo Sans", Arial, sans-serif;
     overflow-x: hidden;
     width: 100%;
@@ -41,13 +41,14 @@ body {
 
 .background-video {
   object-fit: cover;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
 }
+
 .overlay{
     z-index: 1;
     position: absolute;
@@ -93,37 +94,6 @@ body {
     overflow: hidden;
 }
 
-/* Imagem dentro das seções */
-.section-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    display: block;
-}
-
-/* Seção de imagem de respiro */
-.section.breath-image {
-    min-height: 400px;
-    background-image: url(imagem-5.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section.breath-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .section-content {
     position: relative;
     z-index: 1;
@@ -133,68 +103,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-}
-
-/* Content Box */
-.content-box {
-    padding: 2rem;
-    border-radius: 10px;
-    margin-top: 2rem;
-    text-align: left;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.pri{
-  background-image: url(card-1-people.png);
-}
-
-.sec{
-  background-image: url(card-2-people.png);
-  color: #1F1F1F;
-}
-
-.ter{
-  background-image: url(card-3-people.png);
-  color: #1F1F1F;
-}
-
-.content-box.ter,
-.content-box.ter p,
-.content-box.ter h2,
-.content-box.ter span,
-.content-box.ter div {
-  color: #1F1F1F !important;
-}
-
-.content-box p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.content-box strong {
-    color: #00ff00;
-}
-
-/* Botões */
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 1rem 2rem;
-    border-radius: 180px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
-    margin-top: 2rem;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
 }
 
 /* Section-specific styles */
@@ -301,6 +209,10 @@ body {
     width: 45%;
     display: flex;
     justify-content: center;
+}
+
+.process__map svg{
+
 }
 
 .estufa {
@@ -447,7 +359,6 @@ body {
     left: 50%;
     width: 80%;
     height: 100%;
-
     opacity: 0;
     visibility: hidden;
     transform: scale(0.95) translateY(20px) translateX(-50%);
@@ -461,7 +372,7 @@ body {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 5px;
 }
   
 .process__card.active {
@@ -473,8 +384,16 @@ body {
 }
 
 .process__card-image{
-    width: 97%;
-    margin: 8px auto;
+    width: 95%;
+    height: 250px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.process__card-image img{
+   width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .process__card-title{
     padding-left: 20px;
@@ -563,10 +482,9 @@ body {
 .process__explained-image-1 video{
    position: absolute;
     top: 50%;
-    left: 49%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-49%, -50%);
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
@@ -602,12 +520,11 @@ body {
 }
 
 .process__explained-image-5 video{
-   position: absolute;
+    position: absolute;
+    width: 100%;
     top: 50%;
-    left: 49%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-49%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
@@ -768,15 +685,93 @@ body {
     }
 }
 
+@media (max-width: 900px){
+    .process__presentation{
+        background-color: #000;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 100px 0;
+        overflow: hidden;
+    }
 
-@media (max-width: 1200px) {
-    .step-box {
-        flex: 0 0 calc(50% - 10px);
-        width: calc(50% - 10px);
+    .process__presentation__content{
+        width: 85%;
+    }
+
+    .process__presentation__content h2{
+        color:#fff;
+        margin-top: 20px;
+        font-size: 35px;
+        text-transform: uppercase;
+    }
+
+    .process__presentation__content p{
+        padding: 0 15px;
+    }
+    .process__explained-step{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .process__explained-text{
+        width: 85%;
+        padding: 0;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .process__explained-text p{
+        line-height: 1.5;
+    }
+    .process__explained-image-1,
+    .process__explained-image-2,
+    .process__explained-image-3,
+    .process__explained-image-4,
+    .process__explained-image-5,
+    .process__explained-image-6{
+        width: 100%;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
     }
 }
 
 @media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .background-video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .hero-content {
+        margin-top: 100px;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
     .process__wrapper{
         position: relative;
         display: flex;
@@ -798,27 +793,14 @@ body {
     .process__card {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
         width: 100%;
         height: 100%;
         opacity: 0;
-        visibility: hidden;
         transform: scale(0.95) translateY(20px);
-        filter: blur(4px);
-        transition: 
-            opacity 0.5s ease, 
-            visibility 0.5s ease, 
-            transform 0.5s ease, 
-            filter 0.5s ease;
-
-        background-color: #fff;
-        display: flex;
-        flex-direction: column;
-        border-radius: 10px;
     }
 
     .compliance {
-        background-color: #032441;
         display: flex;
         height: auto;
         flex-direction: column;
@@ -833,10 +815,3 @@ body {
 
 }
 
-.section-step{
-    background-image: url(../image.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60vh;
-}
