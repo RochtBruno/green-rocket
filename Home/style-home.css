@@ -84,7 +84,7 @@ html::-webkit-scrollbar {
 
 .arrow-down-fixed {
   position: fixed;
-  left: 5vw;
+  left: 2vw;
   bottom: 12vh;
   z-index: 100;
   cursor: pointer;
@@ -98,10 +98,10 @@ html::-webkit-scrollbar {
 .section-content {
   position: fixed;
   z-index: 2;
-  max-width: 950px;
+  max-width: 1050px;
   width: 100%;
-  left: 5%;
-  top: 180px;
+  left: 2%;
+  top: 53%;
 }
 
 .section-content p{
@@ -246,17 +246,17 @@ html::-webkit-scrollbar {
 }
 .scroll-section.entering .hero-content p,
 .scroll-section.entering .section-content p {
-  animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* Saída */
 .scroll-section.exiting .hero-content h1,
 .scroll-section.exiting .section-content h2 {
-  animation: fadeOutDown 0.5s forwards;
+  animation: fadeOutDown 0.3s forwards;
 }
 .scroll-section.exiting .hero-content p,
 .scroll-section.exiting .section-content p {
-  animation: fadeOutDown 0.5s forwards;
+  animation: fadeOutDown 0.3s forwards;
 }
 .section-contact.active .section-content {
   opacity: 1;
@@ -359,6 +359,11 @@ html::-webkit-scrollbar {
 }
 
 @media (max-width: 768px) {
+  .hero-content,
+  .section-content {
+    max-width: 100%;
+    top: 35%;
+  }
   .section h2,
   .section-contact h2 {
     font-size: 55px;

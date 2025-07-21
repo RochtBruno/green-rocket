@@ -144,9 +144,13 @@ html,body{
 
 .catalog{
 	height: 100vh;
-	padding: 80px 2% 150px 2%;
+	padding: 0 2%;
 	text-align: center;
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .catalog__title{
@@ -162,6 +166,7 @@ html,body{
 	gap: 15px;
 	padding-top: 35px;
 	justify-content: center;
+    width: 80%;
 }
 
 .catalog__card-link {
