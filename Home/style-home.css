@@ -101,7 +101,7 @@ html::-webkit-scrollbar {
   max-width: 1050px;
   width: 100%;
   left: 2%;
-  top: 53%;
+  top: 200px;
 }
 
 .section-content p{
