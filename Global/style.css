@@ -67,6 +67,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 70px 2%;
+  max-height: 80vh;
 }
 .footer__left{
   display: flex;

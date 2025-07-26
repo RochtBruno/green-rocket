@@ -29,8 +29,8 @@ variations.forEach(variation => {
 
 function getColorById(id) {
   switch(id) {
-    case '1': return '#d9d9d9';
-    case '2': return '#cccccc';
+    case '1': return '#000';
+    case '2': return '#b6b6b6ff';
     case '3': return '#bbbbbb';
     case '4': return '#aaaaaa';
     default: return '#d9d9d9';
