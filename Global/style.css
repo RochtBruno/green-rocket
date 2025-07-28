@@ -19,12 +19,19 @@ body {
 }
 
 .header {
-    background-color: var(--text-dark);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(12px);
     padding: 1rem 2rem;
     position: fixed;
-    width: 100%;
-    top: 0;
+    width: 95%;
+    top: 2%;
     z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 40px;
     transition: var(--transition);
 }
 
