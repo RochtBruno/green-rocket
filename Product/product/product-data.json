@@ -1,0 +1,61 @@
+{
+  "defaultId": "k25",
+  "products": [
+    {
+      "id": "k25",
+      "groupTitle": "K-Series",
+      "defaultVariationId": "k25-a",
+      "variations": [
+        {
+          "id": "k25-a",
+          "title": "K-25 A",
+          "subtitle": "High consistency, medical-grade genetics",
+          "price": 189,
+          "currency": "$",
+          "thumb": "../../images/all_products.jpeg",
+          "images": [
+            "../../images/all_products.jpeg",
+            "../../images/cannabis_biomass.jpg",
+            "../../images/clones_and_tissue_culture.JPG",
+            "../../images/curing.JPG"
+          ],
+          "infoLink": "#",
+          "contactUrl": "../../Contact/contact.html",
+          "infoSections": [
+            {
+              "title": "Overview",
+              "subtitle": "Standardized supply",
+              "description": "Licensed medical cannabis product aligned with EU-GMP expectations and full traceability."
+            },
+            {
+              "title": "Specifications",
+              "subtitle": "Batch documentation",
+              "description": "Each lot has full batch analytics, certificates, and compliant packaging."
+            }
+          ]
+        },
+        {
+          "id": "k25-b",
+          "title": "K-25 B",
+          "subtitle": "Balanced profile for consistent outcomes",
+          "price": 175,
+          "currency": "$",
+          "thumb": "../../images/cannabis_biomass.jpg",
+          "images": [
+            "../../images/cannabis_biomass.jpg",
+            "../../images/curing.JPG"
+          ],
+          "infoLink": "#",
+          "contactUrl": "../../Contact/contact.html",
+          "infoSections": [
+            {
+              "title": "Overview",
+              "subtitle": "Reliability first",
+              "description": "Consistent batches engineered for predictable results."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

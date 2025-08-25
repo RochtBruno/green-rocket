@@ -238,6 +238,14 @@
     text-align: center;
     z-index: 1;
 }
+
+.form-status {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #666;
+}
+.form-status.success { color: #2e7d32; }
+.form-status.error { color: #c62828; }
 /* Responsividade */
 @media (max-width: 768px) {
     .contact-form-container {

@@ -264,6 +264,17 @@ html::-webkit-scrollbar {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+
+@media (min-width: 1400px){
+  .hero-content,
+  .section-content{
+    margin-top: 250px;
+  }
+  .hero-content h1,
+  .section-content h2{
+    font-size: 85px;
+  }
+}
 @media (max-width: 1400px){
   .hero-content,
   .section-content{
